@@ -8,7 +8,7 @@
 [tool.poetry]
 # @ Update with your package name, ie:
 # @ name = "@package@"  # package available at the root of the project
-name = "my_package" # package available at the root of the project
+name = "norrkoping_workshop" # package available at the root of the project
 version = "0.0.0"
 description = "@package@ GeoIPS Plugin Package"
 authors = []
@@ -18,12 +18,12 @@ license = "LICENSE" # required
 classifiers = [ # // list of PyPI trove classifiers to describe the project
     "Programming Language :: Python :: 3",
 ]
-repository = "https://github.com/NRLMMD-GEOIPS/@package@"
+repository = "https://github.com/dgshanee/norrkoping_workshop"
 #documentation = "set the url"
 include = ["**/*.txt", "**/*.py", "**/*.yaml"]
 # @ Update with your package name, ie:
 # @ packages = [{include = "@package@"}]  # package available at the root of the project
-packages = [{include = "my_package"}]
+packages = [{include = "norrkoping_workshop"}]
 
 # uses current version .postN and not incrementing
 [tool.poetry-dynamic-versioning]
@@ -59,4 +59,4 @@ python = ">=3.10.0" # mandatory to declare the required python version
 [tool.poetry.plugins."geoips.plugin_packages"]
 # @ Update with your package name, ie:
 # @ "@package@" = "@package@"
-"my_package" = "my_package"
+"norrkoping_workshop" = "norrkoping_workshop"
