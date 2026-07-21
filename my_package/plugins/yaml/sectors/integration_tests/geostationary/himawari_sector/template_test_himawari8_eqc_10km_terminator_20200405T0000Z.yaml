@@ -1,0 +1,94 @@
+# @@ Replace all instances of @@ within this template with appropriate values for your
+# @@ particular use case. Then remove all lines within this file containing "@@"
+#
+# @@ Remove this file altogether if you do not require any tiny sectors in your
+# @@ repository.
+#
+# @@ This file defines a plugin for the "sectors" interface.
+interface: sectors
+family: area_definition_static
+# @@ Name template: test_OPTIONAL:edge|nadir<day|night|terminator>OPTIONAL:tc|ar|volc
+# @@ see below for example, note that 'template_' is at the beginning, unique to this template.
+# @@ Test sectors should not include template_, but should start with test_.
+name: template_test_himawari8_eqc_10km_terminator_20200405T0000Z
+docstring: |
+  # @@ Descriptions of satellite, where it is centered, size and resolution
+  Himawari subsector, centered at 15 latitude, 98 longitude
+  300x300 at 10km resolution
+
+  # @@ Sector location, and pixel percentage make-up
+  This sector is off the coast of Myanmar, containing approximately half ocean
+  and half land pixels.
+
+  # @@ Whether it contains day/night time data and which dataset is being used
+  This is a very small sector that will contain both day-time and night-time
+  data when used with the Himawari-8 dataset at 20200405T0000Z.
+
+  # @@ Dataset day/night make-up
+  This *dataset* contains mostly day-time data with a small amount of night-time
+  data along the western edge of scan.
+
+  # @@ Sector day/night make-up
+  This *sector* was designed to contain approximately one quarter night-time data
+  along the western edge of the sector, and three quarters day-time data.
+
+  # @@ Where to find corresponding test data
+  The test datasets corresponding to this sector can be found in the
+  test_data_ahi test data repository.
+
+  ```
+  geoips config install test_data_ahi
+  ```
+metadata:
+  region:
+    continent: Template
+    country: x
+    area: Himawari
+    subarea: x
+    state: x
+    city: x
+spec:
+  # @@ Should match the name above
+  area_id: template_test_himawari8_eqc_10km_terminator_20200405T0000Z
+  # @@ Should match the docstring above
+  description: |
+    # @@ Copy/paste of above docstring
+    Himawari subsector, centered at 15 latitude, 98 longitude
+    300x300 at 10km resolution
+
+    This sector is off the coast of Myanmar, containing approximately half ocean
+    and half land pixels.
+
+    This is a very small sector that will contain both day-time and night-time
+    data when used with the Himawari-8 dataset at 20200405T0000Z.
+
+    This *dataset* contains mostly day-time data with a small amount of night-time
+    data along the western edge of scan.
+
+    This *sector* was designed to contain approximately one quarter night-time data
+    along the western edge of the sector, and three quarters day-time data.
+
+    The test datasets corresponding to this sector can be found in the
+    test_data_ahi test data repository.
+
+    ```
+    geoips config install test_data_ahi
+    ```
+  projection:
+    a: 6371228.0
+    # @@ should match the above doctring and description
+    lat_0: 15
+    # @@ should match the above doctring and description
+    lon_0: 98
+    # @@ should match the above name and area_id
+    proj: eqc
+    units: m
+  resolution:
+    # @@ should match the above doctring, description, name, and area_id
+    - 10000
+    - 10000
+  # @@ Determines image size, should match the above doctring and description
+  shape:
+    height: 300
+    width: 300
+  center: [0, 0]
