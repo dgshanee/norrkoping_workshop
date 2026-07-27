@@ -1,6 +1,6 @@
 interface: algorithm_configs
 apiVersion: geoips/v1
-name: abi_airmass
+name: seviri_day_severe_storms
 family: standard
 docstring:
     Configuration plugins for generic rgb recipes.
@@ -10,9 +10,9 @@ spec:
         equation:
                 type: difference
                 variables:
-                  - B08BT
-                  - B10BT
-        data_range: [-26.2, 0.6]
+                  - B05BT
+                  - B06BT
+        data_range: [-35.0, 5.0]
         gamma: 1.0
         input_units: kelvin
         output_units: kelvin
@@ -20,18 +20,19 @@ spec:
         equation:
                 type: difference
                 variables:
-                  - B12BT
-                  - B13BT
-        data_range: [-43.2, 6.7]
-        gamma: 1.0
+                  - B04BT
+                  - B09BT
+        data_range: [-5.0, 60.0]
+        gamma: 0.5
         input_units: kelvin
         output_units: kelvin
     blue:
         equation:
-                type: raw
+                type: difference
                 variables:
-                  - B08BT
-        data_range: [243.9, 208.5]
+                  - B03Ref
+                  - B01Ref
+        data_range: [-0.75, 0.25]
         gamma: 1.0
-        input_units: kelvin
-        output_units: kelvin
+        input_units: reflectance
+        output_units: reflectance

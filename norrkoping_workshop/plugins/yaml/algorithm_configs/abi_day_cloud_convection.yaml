@@ -1,6 +1,6 @@
 interface: algorithm_configs
 apiVersion: geoips/v1
-name: abi_24h_microphysics_cloud
+name: abi_day_cloud_convection
 family: standard
 docstring:
     Configuration plugins for generic rgb recipes.
@@ -8,30 +8,28 @@ spec:
     algorithm: config_rgb
     red:
         equation:
-                type: difference
+                type: raw
                 variables:
-                  - B15BT
-                  - B13BT
-        data_range: [-7.1, 2.4]
-        gamma: 1.0
-        input_units: kelvin
-        output_units: kelvin
+                  - B02Ref
+        data_range: [0.0, 1.0]
+        gamma: 1.7
+        input_units: reflectance
+        output_units: reflectance
     green:
         equation:
-                type: difference
+                type: raw
                 variables:
-                  - B14BT
-                  - B11BT
-        data_range: [0.2, 5.2]
-        gamma: 1.2
-        input_units: kelvin
-        output_units: kelvin
+                  - B02Ref
+        data_range: [0.0, 1.0]
+        gamma: 1.7
+        input_units: reflectance
+        output_units: reflectance
     blue:
         equation:
                 type: raw
                 variables:
                   - B13BT
-        data_range: [247.8, 303.1]
+        data_range: [323.0, 203.0]
         gamma: 1.0
         input_units: kelvin
         output_units: kelvin

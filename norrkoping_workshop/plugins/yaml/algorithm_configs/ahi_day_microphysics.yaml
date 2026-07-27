@@ -1,6 +1,6 @@
 interface: algorithm_configs
 apiVersion: geoips/v1
-name: abi_24h_microphysics_cloud
+name: ahi_day_microphysics
 family: standard
 docstring:
     Configuration plugins for generic rgb recipes.
@@ -8,30 +8,28 @@ spec:
     algorithm: config_rgb
     red:
         equation:
-                type: difference
+                type: raw
                 variables:
-                  - B15BT
-                  - B13BT
-        data_range: [-7.1, 2.4]
-        gamma: 1.0
-        input_units: kelvin
-        output_units: kelvin
+                  - B04Ref
+        data_range: [0.0, 1.02]
+        gamma: 0.95
+        input_units: reflectance
+        output_units: reflectance
     green:
         equation:
-                type: difference
+                type: raw
                 variables:
-                  - B14BT
-                  - B11BT
-        data_range: [0.2, 5.2]
-        gamma: 1.2
-        input_units: kelvin
-        output_units: kelvin
+                  - B07BT
+        data_range: [0.02, 0.82]
+        gamma: 2.6
+        input_units: reflectance
+        output_units: reflectance
     blue:
         equation:
                 type: raw
                 variables:
                   - B13BT
-        data_range: [247.8, 303.1]
+        data_range: [203.5, 303.2]
         gamma: 1.0
         input_units: kelvin
         output_units: kelvin

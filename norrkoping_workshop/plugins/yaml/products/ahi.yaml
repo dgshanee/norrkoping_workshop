@@ -1,4 +1,4 @@
-name: abi
+name: ahi
 family: list
 interface: products
 docstring: |
@@ -7,7 +7,7 @@ spec:
     products:
         - name: Airmass
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -20,10 +20,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_airmass
+                        config_name: ahi_airmass
         - name: 24H-Microphysics-Cloud
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -36,10 +36,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_24h_microphysics_cloud
+                        config_name: ahi_24h_microphysics_cloud
         - name: Night-Microphysics
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -51,76 +51,61 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_night_microphysics
+                        config_name: ahi_night_microphysics
         - name: Day-Cloud-Phase
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B06Ref
-                - B02Ref
+                - B03Ref
                 - B05Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_cloud_phase
+                        config_name: ahi_day_cloud_phase
         - name: Day-Microphysics
           product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B07BT
-                - B03Ref
-                - B13BT
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_day_microphysics
-        - name: Day-Cloud-Type
-          product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B04Ref
-                - B02Ref
-                - B05Ref
+                - B07BT
+                - B13BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_cloud_type
+                        config_name: ahi_day_microphysics
         - name: Day-Cloud-Phase-Distinction
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
-                - B02Ref
+                - B03Ref
                 - B13BT
                 - B05Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_cloud_phase_distinction
+                        config_name: ahi_day_cloud_phase_distinction
         - name: Day-Severe-Storms
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
+                - B03Ref
                 - B10BT
-                - B02Ref
                 - B07BT
                 - B13BT
                 - B08BT
@@ -129,10 +114,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_severe_storms
+                        config_name: ahi_day_severe_storms
         - name: 24H-Microphysics-Dust
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -145,10 +130,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_24h_microphysics_dust
+                        config_name: ahi_24h_microphysics_dust
         - name: Simple-Water-Vapour
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -160,10 +145,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_simple_water_vapour
+                        config_name: ahi_simple_water_vapour
         - name: 24H-Microphysics-Ash
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -176,26 +161,27 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_24h_microphysics_ash
+                        config_name: ahi_24h_microphysics_ash
         - name: Volcanic-Emissions-(SO2-and-Ash)
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B09BT
+                - B10BT
+                - B14BT
                 - B13BT
                 - B11BT
-                - B10BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_volcanic_emissions_(so2_and_ash)
+                        config_name: ahi_volcanic_emissions_(so2_and_ash)
         - name: Fire-Temperature
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -207,98 +193,97 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_fire_temperature
+                        config_name: ahi_fire_temperature
         - name: Day-Fire
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B07BT
                 - B03Ref
-                - B02Ref
+                - B04Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_fire
+                        config_name: ahi_day_fire
         - name: Day-Land-Cloud
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
+                - B04Ref
                 - B03Ref
-                - B02Ref
                 - B05Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_land_cloud
+                        config_name: ahi_day_land_cloud
         - name: Day-Microphysics-(with-NIR-1.6,-Legacy)
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
-                - B03Ref
+                - B04Ref
                 - B13BT
                 - B05Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_microphysics_(with_nir_1.6,_legacy)
+                        config_name: ahi_day_microphysics_(with_nir_1.6,_legacy)
         - name: Day-Cloud-Convection
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
-                - B13BT
-                - B02Ref
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_day_cloud_convection
-        - name: HRV-Fog
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B05Ref
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_hrv_fog
-        - name: Day-Snow-Fog
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B07BT
                 - B03Ref
                 - B13BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: ahi_day_cloud_convection
+        - name: HRV-Fog
+          product_defaults: RGB-Default
+          source_names: [ahi]
+          docstring: |
+            pass
+          spec:
+            variables:
                 - B05Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_snow-fog
+                        config_name: ahi_hrv_fog
+        - name: Day-Snow-Fog
+          product_defaults: RGB-Default
+          source_names: [ahi]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B04Ref
+                - B07BT
+                - B05Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: ahi_day_snow-fog
         - name: Airmass
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -311,10 +296,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_airmass
+                        config_name: ahi_airmass
         - name: 24H-Microphysics-Cloud
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -327,10 +312,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_24h_microphysics_cloud
+                        config_name: ahi_24h_microphysics_cloud
         - name: Night-Microphysics
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -342,88 +327,73 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_night_microphysics
+                        config_name: ahi_night_microphysics
         - name: Day-Cloud-Phase
           product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B06Ref
-                - B05Ref
-                - B02Ref
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_day_cloud_phase
-        - name: Day-Microphysics
-          product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B03Ref
-                - B13BT
-                - B07BT
+                - B06Ref
+                - B05Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_microphysics
-        - name: Day-Cloud-Type
+                        config_name: ahi_day_cloud_phase
+        - name: Day-Microphysics
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B04Ref
-                - B05Ref
-                - B02Ref
+                - B13BT
+                - B07BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_cloud_type
+                        config_name: ahi_day_microphysics
         - name: Day-Cloud-Phase-Distinction
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
+                - B03Ref
                 - B05Ref
-                - B02Ref
                 - B13BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_cloud_phase_distinction
+                        config_name: ahi_day_cloud_phase_distinction
         - name: Day-Severe-Storms
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B05Ref
+                - B03Ref
                 - B07BT
                 - B10BT
-                - B02Ref
                 - B13BT
                 - B08BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_severe_storms
+                        config_name: ahi_day_severe_storms
         - name: 24H-Microphysics-Dust
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -436,10 +406,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_24h_microphysics_dust
+                        config_name: ahi_24h_microphysics_dust
         - name: Simple-Water-Vapour
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -451,10 +421,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_simple_water_vapour
+                        config_name: ahi_simple_water_vapour
         - name: 24H-Microphysics-Ash
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -467,14 +437,15 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_24h_microphysics_ash
+                        config_name: ahi_24h_microphysics_ash
         - name: Volcanic-Emissions-(SO2-and-Ash)
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
+                - B14BT
                 - B09BT
                 - B10BT
                 - B13BT
@@ -483,10 +454,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_volcanic_emissions_(so2_and_ash)
+                        config_name: ahi_volcanic_emissions_(so2_and_ash)
         - name: Fire-Temperature
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -498,98 +469,97 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_fire_temperature
+                        config_name: ahi_fire_temperature
         - name: Day-Fire
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B03Ref
-                - B02Ref
+                - B04Ref
                 - B07BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_fire
+                        config_name: ahi_day_fire
         - name: Day-Land-Cloud
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B03Ref
+                - B04Ref
                 - B05Ref
-                - B02Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_land_cloud
+                        config_name: ahi_day_land_cloud
         - name: Day-Microphysics-(with-NIR-1.6,-Legacy)
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
-                - B03Ref
+                - B04Ref
                 - B05Ref
                 - B13BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_microphysics_(with_nir_1.6,_legacy)
+                        config_name: ahi_day_microphysics_(with_nir_1.6,_legacy)
         - name: Day-Cloud-Convection
           product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B02Ref
-                - B13BT
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_day_cloud_convection
-        - name: HRV-Fog
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B05Ref
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_hrv_fog
-        - name: Day-Snow-Fog
-          product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B03Ref
-                - B05Ref
                 - B13BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: ahi_day_cloud_convection
+        - name: HRV-Fog
+          product_defaults: RGB-Default
+          source_names: [ahi]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B05Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: ahi_hrv_fog
+        - name: Day-Snow-Fog
+          product_defaults: RGB-Default
+          source_names: [ahi]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B04Ref
+                - B05Ref
                 - B07BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_snow-fog
+                        config_name: ahi_day_snow-fog
         - name: Airmass
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -602,10 +572,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_airmass
+                        config_name: ahi_airmass
         - name: 24H-Microphysics-Cloud
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -618,10 +588,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_24h_microphysics_cloud
+                        config_name: ahi_24h_microphysics_cloud
         - name: Night-Microphysics
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -633,88 +603,73 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_night_microphysics
+                        config_name: ahi_night_microphysics
         - name: Day-Cloud-Phase
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B06Ref
+                - B03Ref
                 - B05Ref
-                - B02Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_cloud_phase
+                        config_name: ahi_day_cloud_phase
         - name: Day-Microphysics
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
+                - B13BT
                 - B07BT
+                - B04Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: ahi_day_microphysics
+        - name: Day-Cloud-Phase-Distinction
+          product_defaults: RGB-Default
+          source_names: [ahi]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B05Ref
                 - B03Ref
                 - B13BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_microphysics
-        - name: Day-Cloud-Type
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B05Ref
-                - B04Ref
-                - B02Ref
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_day_cloud_type
-        - name: Day-Cloud-Phase-Distinction
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B05Ref
-                - B13BT
-                - B02Ref
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_day_cloud_phase_distinction
+                        config_name: ahi_day_cloud_phase_distinction
         - name: Day-Severe-Storms
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
-                - B10BT
                 - B07BT
                 - B08BT
                 - B13BT
-                - B02Ref
+                - B10BT
+                - B03Ref
                 - B05Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_severe_storms
+                        config_name: ahi_day_severe_storms
         - name: 24H-Microphysics-Dust
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -727,10 +682,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_24h_microphysics_dust
+                        config_name: ahi_24h_microphysics_dust
         - name: Simple-Water-Vapour
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -742,10 +697,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_simple_water_vapour
+                        config_name: ahi_simple_water_vapour
         - name: 24H-Microphysics-Ash
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -758,26 +713,27 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_24h_microphysics_ash
+                        config_name: ahi_24h_microphysics_ash
         - name: Volcanic-Emissions-(SO2-and-Ash)
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B11BT
-                - B09BT
+                - B14BT
                 - B13BT
                 - B10BT
+                - B09BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_volcanic_emissions_(so2_and_ash)
+                        config_name: ahi_volcanic_emissions_(so2_and_ash)
         - name: Fire-Temperature
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -789,69 +745,69 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_fire_temperature
+                        config_name: ahi_fire_temperature
         - name: Day-Fire
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
+                - B04Ref
                 - B03Ref
                 - B07BT
-                - B02Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_fire
+                        config_name: ahi_day_fire
         - name: Day-Land-Cloud
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
+                - B04Ref
                 - B03Ref
                 - B05Ref
-                - B02Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_land_cloud
+                        config_name: ahi_day_land_cloud
         - name: Day-Microphysics-(with-NIR-1.6,-Legacy)
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
-                - B05Ref
-                - B03Ref
                 - B13BT
+                - B05Ref
+                - B04Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_microphysics_(with_nir_1.6,_legacy)
+                        config_name: ahi_day_microphysics_(with_nir_1.6,_legacy)
         - name: Day-Cloud-Convection
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
+                - B03Ref
                 - B13BT
-                - B02Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_cloud_convection
+                        config_name: ahi_day_cloud_convection
         - name: HRV-Fog
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -861,26 +817,25 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_hrv_fog
+                        config_name: ahi_hrv_fog
         - name: Day-Snow-Fog
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
-                - B13BT
-                - B05Ref
-                - B03Ref
                 - B07BT
+                - B05Ref
+                - B04Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_snow-fog
+                        config_name: ahi_day_snow-fog
         - name: Airmass
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -893,10 +848,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_airmass
+                        config_name: ahi_airmass
         - name: 24H-Microphysics-Cloud
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -909,10 +864,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_24h_microphysics_cloud
+                        config_name: ahi_24h_microphysics_cloud
         - name: Night-Microphysics
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -924,225 +879,211 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_night_microphysics
+                        config_name: ahi_night_microphysics
         - name: Day-Cloud-Phase
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B06Ref
+                - B03Ref
                 - B05Ref
-                - B02Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_cloud_phase
+                        config_name: ahi_day_cloud_phase
         - name: Day-Microphysics
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B07BT
-                - B03Ref
+                - B04Ref
                 - B13BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_microphysics
-        - name: Day-Cloud-Type
+                        config_name: ahi_day_microphysics
+        - name: Day-Cloud-Phase-Distinction
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B03Ref
+                - B13BT
+                - B05Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: ahi_day_cloud_phase_distinction
+        - name: Day-Severe-Storms
+          product_defaults: RGB-Default
+          source_names: [ahi]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B10BT
+                - B07BT
+                - B05Ref
+                - B13BT
+                - B03Ref
+                - B08BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: ahi_day_severe_storms
+        - name: 24H-Microphysics-Dust
+          product_defaults: RGB-Default
+          source_names: [ahi]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B11BT
+                - B15BT
+                - B13BT
+                - B14BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: ahi_24h_microphysics_dust
+        - name: Simple-Water-Vapour
+          product_defaults: RGB-Default
+          source_names: [ahi]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B08BT
+                - B13BT
+                - B10BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: ahi_simple_water_vapour
+        - name: 24H-Microphysics-Ash
+          product_defaults: RGB-Default
+          source_names: [ahi]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B11BT
+                - B15BT
+                - B13BT
+                - B14BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: ahi_24h_microphysics_ash
+        - name: Volcanic-Emissions-(SO2-and-Ash)
+          product_defaults: RGB-Default
+          source_names: [ahi]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B11BT
+                - B10BT
+                - B14BT
+                - B09BT
+                - B13BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: ahi_volcanic_emissions_(so2_and_ash)
+        - name: Fire-Temperature
+          product_defaults: RGB-Default
+          source_names: [ahi]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B06Ref
+                - B07BT
+                - B05Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: ahi_fire_temperature
+        - name: Day-Fire
+          product_defaults: RGB-Default
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B04Ref
-                - B05Ref
-                - B02Ref
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_day_cloud_type
-        - name: Day-Cloud-Phase-Distinction
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B13BT
-                - B05Ref
-                - B02Ref
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_day_cloud_phase_distinction
-        - name: Day-Severe-Storms
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B07BT
-                - B05Ref
-                - B02Ref
-                - B13BT
-                - B10BT
-                - B08BT
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_day_severe_storms
-        - name: 24H-Microphysics-Dust
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B11BT
-                - B15BT
-                - B13BT
-                - B14BT
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_24h_microphysics_dust
-        - name: Simple-Water-Vapour
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B08BT
-                - B13BT
-                - B10BT
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_simple_water_vapour
-        - name: 24H-Microphysics-Ash
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B11BT
-                - B15BT
-                - B13BT
-                - B14BT
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_24h_microphysics_ash
-        - name: Volcanic-Emissions-(SO2-and-Ash)
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B13BT
-                - B10BT
-                - B11BT
-                - B09BT
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_volcanic_emissions_(so2_and_ash)
-        - name: Fire-Temperature
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B06Ref
-                - B07BT
-                - B05Ref
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_fire_temperature
-        - name: Day-Fire
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
                 - B03Ref
                 - B07BT
-                - B02Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_fire
+                        config_name: ahi_day_fire
         - name: Day-Land-Cloud
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
+                - B04Ref
                 - B03Ref
                 - B05Ref
-                - B02Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_land_cloud
+                        config_name: ahi_day_land_cloud
         - name: Day-Microphysics-(with-NIR-1.6,-Legacy)
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
-                - B03Ref
-                - B05Ref
+                - B04Ref
                 - B13BT
+                - B05Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_microphysics_(with_nir_1.6,_legacy)
+                        config_name: ahi_day_microphysics_(with_nir_1.6,_legacy)
         - name: Day-Cloud-Convection
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
+                - B03Ref
                 - B13BT
-                - B02Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_cloud_convection
+                        config_name: ahi_day_cloud_convection
         - name: HRV-Fog
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -1152,26 +1093,25 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_hrv_fog
+                        config_name: ahi_hrv_fog
         - name: Day-Snow-Fog
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
+                - B04Ref
                 - B07BT
-                - B03Ref
                 - B05Ref
-                - B13BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_snow-fog
+                        config_name: ahi_day_snow-fog
         - name: Airmass
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -1184,10 +1124,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_airmass
+                        config_name: ahi_airmass
         - name: 24H-Microphysics-Cloud
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -1200,10 +1140,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_24h_microphysics_cloud
+                        config_name: ahi_24h_microphysics_cloud
         - name: Night-Microphysics
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -1215,88 +1155,73 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_night_microphysics
+                        config_name: ahi_night_microphysics
         - name: Day-Cloud-Phase
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B05Ref
-                - B02Ref
+                - B03Ref
                 - B06Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_cloud_phase
+                        config_name: ahi_day_cloud_phase
         - name: Day-Microphysics
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B07BT
-                - B03Ref
                 - B13BT
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_day_microphysics
-        - name: Day-Cloud-Type
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B05Ref
-                - B02Ref
                 - B04Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_cloud_type
+                        config_name: ahi_day_microphysics
         - name: Day-Cloud-Phase-Distinction
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B05Ref
-                - B02Ref
                 - B13BT
+                - B03Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_cloud_phase_distinction
+                        config_name: ahi_day_cloud_phase_distinction
         - name: Day-Severe-Storms
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
-                - B02Ref
+                - B13BT
                 - B05Ref
                 - B07BT
                 - B10BT
-                - B13BT
+                - B03Ref
                 - B08BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_severe_storms
+                        config_name: ahi_day_severe_storms
         - name: 24H-Microphysics-Dust
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -1309,10 +1234,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_24h_microphysics_dust
+                        config_name: ahi_24h_microphysics_dust
         - name: Simple-Water-Vapour
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -1324,10 +1249,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_simple_water_vapour
+                        config_name: ahi_simple_water_vapour
         - name: 24H-Microphysics-Ash
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -1340,14 +1265,15 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_24h_microphysics_ash
+                        config_name: ahi_24h_microphysics_ash
         - name: Volcanic-Emissions-(SO2-and-Ash)
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
+                - B14BT
                 - B11BT
                 - B10BT
                 - B13BT
@@ -1356,10 +1282,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_volcanic_emissions_(so2_and_ash)
+                        config_name: ahi_volcanic_emissions_(so2_and_ash)
         - name: Fire-Temperature
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -1371,69 +1297,69 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_fire_temperature
+                        config_name: ahi_fire_temperature
         - name: Day-Fire
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
-                - B02Ref
+                - B04Ref
                 - B07BT
                 - B03Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_fire
+                        config_name: ahi_day_fire
         - name: Day-Land-Cloud
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B05Ref
-                - B02Ref
                 - B03Ref
+                - B04Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_land_cloud
+                        config_name: ahi_day_land_cloud
         - name: Day-Microphysics-(with-NIR-1.6,-Legacy)
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B05Ref
+                - B13BT
+                - B04Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: ahi_day_microphysics_(with_nir_1.6,_legacy)
+        - name: Day-Cloud-Convection
+          product_defaults: RGB-Default
+          source_names: [ahi]
+          docstring: |
+            pass
+          spec:
+            variables:
                 - B03Ref
                 - B13BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_microphysics_(with_nir_1.6,_legacy)
-        - name: Day-Cloud-Convection
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B02Ref
-                - B13BT
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_day_cloud_convection
+                        config_name: ahi_day_cloud_convection
         - name: HRV-Fog
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -1443,26 +1369,25 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_hrv_fog
+                        config_name: ahi_hrv_fog
         - name: Day-Snow-Fog
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B05Ref
                 - B07BT
-                - B03Ref
-                - B13BT
+                - B04Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_snow-fog
+                        config_name: ahi_day_snow-fog
         - name: Airmass
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -1475,10 +1400,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_airmass
+                        config_name: ahi_airmass
         - name: 24H-Microphysics-Cloud
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -1491,10 +1416,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_24h_microphysics_cloud
+                        config_name: ahi_24h_microphysics_cloud
         - name: Night-Microphysics
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -1506,254 +1431,239 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_night_microphysics
+                        config_name: ahi_night_microphysics
         - name: Day-Cloud-Phase
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
-                - B02Ref
                 - B05Ref
                 - B06Ref
+                - B03Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_cloud_phase
+                        config_name: ahi_day_cloud_phase
         - name: Day-Microphysics
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B04Ref
+                - B13BT
+                - B07BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: ahi_day_microphysics
+        - name: Day-Cloud-Phase-Distinction
+          product_defaults: RGB-Default
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B13BT
+                - B05Ref
+                - B03Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: ahi_day_cloud_phase_distinction
+        - name: Day-Severe-Storms
+          product_defaults: RGB-Default
+          source_names: [ahi]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B13BT
+                - B05Ref
+                - B03Ref
+                - B07BT
+                - B10BT
+                - B08BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: ahi_day_severe_storms
+        - name: 24H-Microphysics-Dust
+          product_defaults: RGB-Default
+          source_names: [ahi]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B13BT
+                - B14BT
+                - B15BT
+                - B11BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: ahi_24h_microphysics_dust
+        - name: Simple-Water-Vapour
+          product_defaults: RGB-Default
+          source_names: [ahi]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B13BT
+                - B10BT
+                - B08BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: ahi_simple_water_vapour
+        - name: 24H-Microphysics-Ash
+          product_defaults: RGB-Default
+          source_names: [ahi]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B13BT
+                - B14BT
+                - B15BT
+                - B11BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: ahi_24h_microphysics_ash
+        - name: Volcanic-Emissions-(SO2-and-Ash)
+          product_defaults: RGB-Default
+          source_names: [ahi]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B14BT
+                - B11BT
+                - B13BT
+                - B09BT
+                - B10BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: ahi_volcanic_emissions_(so2_and_ash)
+        - name: Fire-Temperature
+          product_defaults: RGB-Default
+          source_names: [ahi]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B05Ref
+                - B07BT
+                - B06Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: ahi_fire_temperature
+        - name: Day-Fire
+          product_defaults: RGB-Default
+          source_names: [ahi]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B04Ref
                 - B07BT
                 - B03Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_microphysics
-        - name: Day-Cloud-Type
+                        config_name: ahi_day_fire
+        - name: Day-Land-Cloud
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B04Ref
                 - B05Ref
-                - B02Ref
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_day_cloud_type
-        - name: Day-Cloud-Phase-Distinction
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B13BT
-                - B05Ref
-                - B02Ref
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_day_cloud_phase_distinction
-        - name: Day-Severe-Storms
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B02Ref
-                - B13BT
-                - B05Ref
-                - B07BT
-                - B10BT
-                - B08BT
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_day_severe_storms
-        - name: 24H-Microphysics-Dust
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B13BT
-                - B14BT
-                - B15BT
-                - B11BT
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_24h_microphysics_dust
-        - name: Simple-Water-Vapour
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B13BT
-                - B10BT
-                - B08BT
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_simple_water_vapour
-        - name: 24H-Microphysics-Ash
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B13BT
-                - B14BT
-                - B15BT
-                - B11BT
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_24h_microphysics_ash
-        - name: Volcanic-Emissions-(SO2-and-Ash)
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B13BT
-                - B09BT
-                - B10BT
-                - B11BT
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_volcanic_emissions_(so2_and_ash)
-        - name: Fire-Temperature
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B05Ref
-                - B07BT
-                - B06Ref
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_fire_temperature
-        - name: Day-Fire
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B02Ref
-                - B07BT
                 - B03Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_fire
-        - name: Day-Land-Cloud
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B02Ref
-                - B05Ref
-                - B03Ref
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_day_land_cloud
+                        config_name: ahi_day_land_cloud
         - name: Day-Microphysics-(with-NIR-1.6,-Legacy)
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
-                - B13BT
+                - B04Ref
                 - B05Ref
-                - B03Ref
+                - B13BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_microphysics_(with_nir_1.6,_legacy)
+                        config_name: ahi_day_microphysics_(with_nir_1.6,_legacy)
         - name: Day-Cloud-Convection
           product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B02Ref
-                - B13BT
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_day_cloud_convection
-        - name: HRV-Fog
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B05Ref
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_hrv_fog
-        - name: Day-Snow-Fog
-          product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B13BT
-                - B05Ref
-                - B07BT
                 - B03Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_snow-fog
+                        config_name: ahi_day_cloud_convection
+        - name: HRV-Fog
+          product_defaults: RGB-Default
+          source_names: [ahi]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B05Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: ahi_hrv_fog
+        - name: Day-Snow-Fog
+          product_defaults: RGB-Default
+          source_names: [ahi]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B04Ref
+                - B05Ref
+                - B07BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: ahi_day_snow-fog
         - name: Airmass
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -1766,10 +1676,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_airmass
+                        config_name: ahi_airmass
         - name: 24H-Microphysics-Cloud
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -1782,10 +1692,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_24h_microphysics_cloud
+                        config_name: ahi_24h_microphysics_cloud
         - name: Night-Microphysics
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -1797,70 +1707,55 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_night_microphysics
+                        config_name: ahi_night_microphysics
         - name: Day-Cloud-Phase
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
+                - B03Ref
                 - B05Ref
                 - B06Ref
-                - B02Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_cloud_phase
+                        config_name: ahi_day_cloud_phase
         - name: Day-Microphysics
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B07BT
-                - B03Ref
                 - B13BT
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_day_microphysics
-        - name: Day-Cloud-Type
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
                 - B04Ref
-                - B05Ref
-                - B02Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_cloud_type
+                        config_name: ahi_day_microphysics
         - name: Day-Cloud-Phase-Distinction
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B13BT
+                - B03Ref
                 - B05Ref
-                - B02Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_cloud_phase_distinction
+                        config_name: ahi_day_cloud_phase_distinction
         - name: Day-Severe-Storms
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -1868,17 +1763,17 @@ spec:
                 - B13BT
                 - B10BT
                 - B07BT
-                - B02Ref
+                - B03Ref
                 - B08BT
                 - B05Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_severe_storms
+                        config_name: ahi_day_severe_storms
         - name: 24H-Microphysics-Dust
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -1891,10 +1786,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_24h_microphysics_dust
+                        config_name: ahi_24h_microphysics_dust
         - name: Simple-Water-Vapour
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -1906,10 +1801,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_simple_water_vapour
+                        config_name: ahi_simple_water_vapour
         - name: 24H-Microphysics-Ash
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -1922,26 +1817,27 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_24h_microphysics_ash
+                        config_name: ahi_24h_microphysics_ash
         - name: Volcanic-Emissions-(SO2-and-Ash)
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
-                - B10BT
                 - B13BT
+                - B14BT
+                - B10BT
                 - B11BT
                 - B09BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_volcanic_emissions_(so2_and_ash)
+                        config_name: ahi_volcanic_emissions_(so2_and_ash)
         - name: Fire-Temperature
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -1953,69 +1849,69 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_fire_temperature
+                        config_name: ahi_fire_temperature
         - name: Day-Fire
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B07BT
                 - B03Ref
-                - B02Ref
+                - B04Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_fire
+                        config_name: ahi_day_fire
         - name: Day-Land-Cloud
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B03Ref
+                - B04Ref
                 - B05Ref
-                - B02Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_land_cloud
+                        config_name: ahi_day_land_cloud
         - name: Day-Microphysics-(with-NIR-1.6,-Legacy)
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B13BT
+                - B04Ref
+                - B05Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: ahi_day_microphysics_(with_nir_1.6,_legacy)
+        - name: Day-Cloud-Convection
+          product_defaults: RGB-Default
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B03Ref
-                - B05Ref
                 - B13BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_microphysics_(with_nir_1.6,_legacy)
-        - name: Day-Cloud-Convection
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B13BT
-                - B02Ref
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_day_cloud_convection
+                        config_name: ahi_day_cloud_convection
         - name: HRV-Fog
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -2025,26 +1921,25 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_hrv_fog
+                        config_name: ahi_hrv_fog
         - name: Day-Snow-Fog
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B07BT
-                - B03Ref
+                - B04Ref
                 - B05Ref
-                - B13BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_snow-fog
+                        config_name: ahi_day_snow-fog
         - name: Airmass
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -2057,10 +1952,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_airmass
+                        config_name: ahi_airmass
         - name: 24H-Microphysics-Cloud
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -2073,10 +1968,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_24h_microphysics_cloud
+                        config_name: ahi_24h_microphysics_cloud
         - name: Night-Microphysics
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -2088,70 +1983,55 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_night_microphysics
+                        config_name: ahi_night_microphysics
         - name: Day-Cloud-Phase
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B05Ref
                 - B06Ref
-                - B02Ref
+                - B03Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_cloud_phase
+                        config_name: ahi_day_cloud_phase
         - name: Day-Microphysics
           product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B07BT
-                - B03Ref
-                - B13BT
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_day_microphysics
-        - name: Day-Cloud-Type
-          product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B04Ref
-                - B02Ref
-                - B05Ref
+                - B07BT
+                - B13BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_cloud_type
+                        config_name: ahi_day_microphysics
         - name: Day-Cloud-Phase-Distinction
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B05Ref
-                - B02Ref
+                - B03Ref
                 - B13BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_cloud_phase_distinction
+                        config_name: ahi_day_cloud_phase_distinction
         - name: Day-Severe-Storms
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -2159,17 +2039,17 @@ spec:
                 - B05Ref
                 - B10BT
                 - B08BT
-                - B02Ref
                 - B13BT
                 - B07BT
+                - B03Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_severe_storms
+                        config_name: ahi_day_severe_storms
         - name: 24H-Microphysics-Dust
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -2182,10 +2062,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_24h_microphysics_dust
+                        config_name: ahi_24h_microphysics_dust
         - name: Simple-Water-Vapour
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -2197,10 +2077,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_simple_water_vapour
+                        config_name: ahi_simple_water_vapour
         - name: 24H-Microphysics-Ash
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -2213,26 +2093,27 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_24h_microphysics_ash
+                        config_name: ahi_24h_microphysics_ash
         - name: Volcanic-Emissions-(SO2-and-Ash)
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
-                - B11BT
-                - B09BT
-                - B13BT
                 - B10BT
+                - B09BT
+                - B11BT
+                - B13BT
+                - B14BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_volcanic_emissions_(so2_and_ash)
+                        config_name: ahi_volcanic_emissions_(so2_and_ash)
         - name: Fire-Temperature
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -2244,98 +2125,97 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_fire_temperature
+                        config_name: ahi_fire_temperature
         - name: Day-Fire
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
+                - B04Ref
                 - B07BT
-                - B02Ref
                 - B03Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_fire
+                        config_name: ahi_day_fire
         - name: Day-Land-Cloud
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B05Ref
-                - B02Ref
+                - B04Ref
                 - B03Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_land_cloud
+                        config_name: ahi_day_land_cloud
         - name: Day-Microphysics-(with-NIR-1.6,-Legacy)
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
-                - B05Ref
-                - B03Ref
+                - B04Ref
                 - B13BT
+                - B05Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_microphysics_(with_nir_1.6,_legacy)
+                        config_name: ahi_day_microphysics_(with_nir_1.6,_legacy)
         - name: Day-Cloud-Convection
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
-                - B02Ref
-                - B13BT
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_day_cloud_convection
-        - name: HRV-Fog
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B05Ref
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_hrv_fog
-        - name: Day-Snow-Fog
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B05Ref
-                - B07BT
                 - B03Ref
                 - B13BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_snow-fog
+                        config_name: ahi_day_cloud_convection
+        - name: HRV-Fog
+          product_defaults: RGB-Default
+          source_names: [ahi]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B05Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: ahi_hrv_fog
+        - name: Day-Snow-Fog
+          product_defaults: RGB-Default
+          source_names: [ahi]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B04Ref
+                - B07BT
+                - B05Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: ahi_day_snow-fog
         - name: Airmass
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -2348,10 +2228,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_airmass
+                        config_name: ahi_airmass
         - name: 24H-Microphysics-Cloud
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -2364,10 +2244,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_24h_microphysics_cloud
+                        config_name: ahi_24h_microphysics_cloud
         - name: Night-Microphysics
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -2379,88 +2259,73 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_night_microphysics
+                        config_name: ahi_night_microphysics
         - name: Day-Cloud-Phase
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
-                - B02Ref
                 - B06Ref
+                - B03Ref
                 - B05Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_cloud_phase
+                        config_name: ahi_day_cloud_phase
         - name: Day-Microphysics
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
-                - B03Ref
+                - B04Ref
                 - B07BT
                 - B13BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_microphysics
-        - name: Day-Cloud-Type
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B02Ref
-                - B04Ref
-                - B05Ref
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_day_cloud_type
+                        config_name: ahi_day_microphysics
         - name: Day-Cloud-Phase-Distinction
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
-                - B02Ref
                 - B13BT
                 - B05Ref
+                - B03Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_cloud_phase_distinction
+                        config_name: ahi_day_cloud_phase_distinction
         - name: Day-Severe-Storms
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
-                - B02Ref
                 - B05Ref
                 - B10BT
                 - B13BT
                 - B07BT
+                - B03Ref
                 - B08BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_severe_storms
+                        config_name: ahi_day_severe_storms
         - name: 24H-Microphysics-Dust
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -2473,10 +2338,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_24h_microphysics_dust
+                        config_name: ahi_24h_microphysics_dust
         - name: Simple-Water-Vapour
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -2488,10 +2353,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_simple_water_vapour
+                        config_name: ahi_simple_water_vapour
         - name: 24H-Microphysics-Ash
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -2504,26 +2369,27 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_24h_microphysics_ash
+                        config_name: ahi_24h_microphysics_ash
         - name: Volcanic-Emissions-(SO2-and-Ash)
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
-                - B13BT
                 - B10BT
-                - B11BT
+                - B13BT
+                - B14BT
                 - B09BT
+                - B11BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_volcanic_emissions_(so2_and_ash)
+                        config_name: ahi_volcanic_emissions_(so2_and_ash)
         - name: Fire-Temperature
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -2535,69 +2401,69 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_fire_temperature
+                        config_name: ahi_fire_temperature
         - name: Day-Fire
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
-                - B02Ref
                 - B03Ref
                 - B07BT
+                - B04Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_fire
+                        config_name: ahi_day_fire
         - name: Day-Land-Cloud
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
-                - B02Ref
                 - B03Ref
                 - B05Ref
+                - B04Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_land_cloud
+                        config_name: ahi_day_land_cloud
         - name: Day-Microphysics-(with-NIR-1.6,-Legacy)
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
-                - B03Ref
+                - B04Ref
                 - B05Ref
                 - B13BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_microphysics_(with_nir_1.6,_legacy)
+                        config_name: ahi_day_microphysics_(with_nir_1.6,_legacy)
         - name: Day-Cloud-Convection
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
-                - B02Ref
+                - B03Ref
                 - B13BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_cloud_convection
+                        config_name: ahi_day_cloud_convection
         - name: HRV-Fog
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -2607,26 +2473,25 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_hrv_fog
+                        config_name: ahi_hrv_fog
         - name: Day-Snow-Fog
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B05Ref
-                - B03Ref
+                - B04Ref
                 - B07BT
-                - B13BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_snow-fog
+                        config_name: ahi_day_snow-fog
         - name: Airmass
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -2639,10 +2504,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_airmass
+                        config_name: ahi_airmass
         - name: 24H-Microphysics-Cloud
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -2655,10 +2520,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_24h_microphysics_cloud
+                        config_name: ahi_24h_microphysics_cloud
         - name: Night-Microphysics
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -2670,70 +2535,55 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_night_microphysics
+                        config_name: ahi_night_microphysics
         - name: Day-Cloud-Phase
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B05Ref
-                - B02Ref
+                - B03Ref
                 - B06Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_cloud_phase
+                        config_name: ahi_day_cloud_phase
         - name: Day-Microphysics
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B07BT
+                - B04Ref
+                - B13BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: ahi_day_microphysics
+        - name: Day-Cloud-Phase-Distinction
+          product_defaults: RGB-Default
+          source_names: [ahi]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B05Ref
                 - B13BT
                 - B03Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_microphysics
-        - name: Day-Cloud-Type
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B05Ref
-                - B02Ref
-                - B04Ref
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_day_cloud_type
-        - name: Day-Cloud-Phase-Distinction
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B05Ref
-                - B02Ref
-                - B13BT
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_day_cloud_phase_distinction
+                        config_name: ahi_day_cloud_phase_distinction
         - name: Day-Severe-Storms
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -2743,15 +2593,15 @@ spec:
                 - B08BT
                 - B10BT
                 - B13BT
-                - B02Ref
+                - B03Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_severe_storms
+                        config_name: ahi_day_severe_storms
         - name: 24H-Microphysics-Dust
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -2764,10 +2614,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_24h_microphysics_dust
+                        config_name: ahi_24h_microphysics_dust
         - name: Simple-Water-Vapour
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -2779,10 +2629,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_simple_water_vapour
+                        config_name: ahi_simple_water_vapour
         - name: 24H-Microphysics-Ash
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -2795,10 +2645,10 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_24h_microphysics_ash
+                        config_name: ahi_24h_microphysics_ash
         - name: Volcanic-Emissions-(SO2-and-Ash)
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -2807,14 +2657,15 @@ spec:
                 - B10BT
                 - B13BT
                 - B09BT
+                - B14BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_volcanic_emissions_(so2_and_ash)
+                        config_name: ahi_volcanic_emissions_(so2_and_ash)
         - name: Fire-Temperature
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -2826,69 +2677,69 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_fire_temperature
+                        config_name: ahi_fire_temperature
         - name: Day-Fire
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B07BT
-                - B02Ref
+                - B04Ref
                 - B03Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_fire
+                        config_name: ahi_day_fire
         - name: Day-Land-Cloud
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B05Ref
-                - B02Ref
+                - B04Ref
                 - B03Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_land_cloud
+                        config_name: ahi_day_land_cloud
         - name: Day-Microphysics-(with-NIR-1.6,-Legacy)
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B05Ref
+                - B04Ref
+                - B13BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: ahi_day_microphysics_(with_nir_1.6,_legacy)
+        - name: Day-Cloud-Convection
+          product_defaults: RGB-Default
+          source_names: [ahi]
+          docstring: |
+            pass
+          spec:
+            variables:
                 - B13BT
                 - B03Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_microphysics_(with_nir_1.6,_legacy)
-        - name: Day-Cloud-Convection
-          product_defaults: RGB-Default
-          source_names: [abi]
-          docstring: |
-            pass
-          spec:
-            variables:
-                - B02Ref
-                - B13BT
-            algorithm:
-                plugin:
-                    name: config_rgb
-                    arguments:
-                        config_name: abi_day_cloud_convection
+                        config_name: ahi_day_cloud_convection
         - name: HRV-Fog
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
@@ -2898,20 +2749,19 @@ spec:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_hrv_fog
+                        config_name: ahi_hrv_fog
         - name: Day-Snow-Fog
           product_defaults: RGB-Default
-          source_names: [abi]
+          source_names: [ahi]
           docstring: |
             pass
           spec:
             variables:
                 - B07BT
                 - B05Ref
-                - B13BT
-                - B03Ref
+                - B04Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_snow-fog
+                        config_name: ahi_day_snow-fog

@@ -1,0 +1,2247 @@
+name: seviri
+family: list
+interface: products
+docstring: |
+    Products for rgb algorithms.
+spec:
+    products:
+        - name: Airmass
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+                - B06BT
+                - B08BT
+                - B05BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_airmass
+        - name: 24H-Microphysics-Cloud
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+                - B07BT
+                - B10BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_24h_microphysics_cloud
+        - name: Night-Microphysics
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+                - B04BT
+                - B10BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_night_microphysics
+        - name: Day-Microphysics
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+                - B04BT
+                - B02Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_microphysics
+        - name: Day-Severe-Storms
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+                - B06BT
+                - B03Ref
+                - B04BT
+                - B05BT
+                - B01Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_severe_storms
+        - name: Overshooting-Tops
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+                - B08BT
+                - B05BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_overshooting_tops
+        - name: 24H-Microphysics-Dust
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+                - B07BT
+                - B10BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_24h_microphysics_dust
+        - name: 24H-Microphysics-Ash
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+                - B07BT
+                - B10BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_24h_microphysics_ash
+        - name: Day-Fire
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B04BT
+                - B02Ref
+                - B01Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_fire
+        - name: Day-Land-Cloud
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B02Ref
+                - B03Ref
+                - B01Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_land_cloud
+        - name: Day-Microphysics-(with-NIR-1.6,-Legacy)
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+                - B03Ref
+                - B02Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_microphysics_(with_nir_1.6,_legacy)
+        - name: Day-HRV-Cloud
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_hrv_cloud
+        - name: Day-Cloud-Convection
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+                - B01Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_cloud_convection
+        - name: HRV-Fog
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B03Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_hrv_fog
+        - name: Day-Snow-Fog
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B04BT
+                - B03Ref
+                - B02Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_snow-fog
+        - name: Airmass
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B08BT
+                - B05BT
+                - B06BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_airmass
+        - name: 24H-Microphysics-Cloud
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+                - B10BT
+                - B07BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_24h_microphysics_cloud
+        - name: Night-Microphysics
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B04BT
+                - B09BT
+                - B10BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_night_microphysics
+        - name: Day-Microphysics
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B04BT
+                - B09BT
+                - B02Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_microphysics
+        - name: Day-Severe-Storms
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B05BT
+                - B03Ref
+                - B01Ref
+                - B09BT
+                - B04BT
+                - B06BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_severe_storms
+        - name: Overshooting-Tops
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B05BT
+                - B08BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_overshooting_tops
+        - name: 24H-Microphysics-Dust
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+                - B10BT
+                - B07BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_24h_microphysics_dust
+        - name: 24H-Microphysics-Ash
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+                - B10BT
+                - B07BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_24h_microphysics_ash
+        - name: Day-Fire
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B04BT
+                - B02Ref
+                - B01Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_fire
+        - name: Day-Land-Cloud
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B03Ref
+                - B02Ref
+                - B01Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_land_cloud
+        - name: Day-Microphysics-(with-NIR-1.6,-Legacy)
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+                - B03Ref
+                - B02Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_microphysics_(with_nir_1.6,_legacy)
+        - name: Day-HRV-Cloud
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_hrv_cloud
+        - name: Day-Cloud-Convection
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+                - B01Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_cloud_convection
+        - name: HRV-Fog
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B03Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_hrv_fog
+        - name: Day-Snow-Fog
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B04BT
+                - B03Ref
+                - B02Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_snow-fog
+        - name: Airmass
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B08BT
+                - B06BT
+                - B09BT
+                - B05BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_airmass
+        - name: 24H-Microphysics-Cloud
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+                - B07BT
+                - B10BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_24h_microphysics_cloud
+        - name: Night-Microphysics
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B04BT
+                - B09BT
+                - B10BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_night_microphysics
+        - name: Day-Microphysics
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B04BT
+                - B09BT
+                - B02Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_microphysics
+        - name: Day-Severe-Storms
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B05BT
+                - B09BT
+                - B01Ref
+                - B06BT
+                - B04BT
+                - B03Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_severe_storms
+        - name: Overshooting-Tops
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B08BT
+                - B09BT
+                - B05BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_overshooting_tops
+        - name: 24H-Microphysics-Dust
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+                - B07BT
+                - B10BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_24h_microphysics_dust
+        - name: 24H-Microphysics-Ash
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+                - B07BT
+                - B10BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_24h_microphysics_ash
+        - name: Day-Fire
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B04BT
+                - B01Ref
+                - B02Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_fire
+        - name: Day-Land-Cloud
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B01Ref
+                - B03Ref
+                - B02Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_land_cloud
+        - name: Day-Microphysics-(with-NIR-1.6,-Legacy)
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B03Ref
+                - B09BT
+                - B02Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_microphysics_(with_nir_1.6,_legacy)
+        - name: Day-HRV-Cloud
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_hrv_cloud
+        - name: Day-Cloud-Convection
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B01Ref
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_cloud_convection
+        - name: HRV-Fog
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B03Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_hrv_fog
+        - name: Day-Snow-Fog
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B04BT
+                - B03Ref
+                - B02Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_snow-fog
+        - name: Airmass
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B05BT
+                - B09BT
+                - B06BT
+                - B08BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_airmass
+        - name: 24H-Microphysics-Cloud
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B07BT
+                - B10BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_24h_microphysics_cloud
+        - name: Night-Microphysics
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B04BT
+                - B10BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_night_microphysics
+        - name: Day-Microphysics
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B04BT
+                - B09BT
+                - B02Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_microphysics
+        - name: Day-Severe-Storms
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B06BT
+                - B04BT
+                - B01Ref
+                - B09BT
+                - B05BT
+                - B03Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_severe_storms
+        - name: Overshooting-Tops
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B05BT
+                - B08BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_overshooting_tops
+        - name: 24H-Microphysics-Dust
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B07BT
+                - B10BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_24h_microphysics_dust
+        - name: 24H-Microphysics-Ash
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B07BT
+                - B10BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_24h_microphysics_ash
+        - name: Day-Fire
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B04BT
+                - B01Ref
+                - B02Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_fire
+        - name: Day-Land-Cloud
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B02Ref
+                - B03Ref
+                - B01Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_land_cloud
+        - name: Day-Microphysics-(with-NIR-1.6,-Legacy)
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+                - B03Ref
+                - B02Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_microphysics_(with_nir_1.6,_legacy)
+        - name: Day-HRV-Cloud
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_hrv_cloud
+        - name: Day-Cloud-Convection
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B01Ref
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_cloud_convection
+        - name: HRV-Fog
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B03Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_hrv_fog
+        - name: Day-Snow-Fog
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B04BT
+                - B03Ref
+                - B02Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_snow-fog
+        - name: Airmass
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+                - B05BT
+                - B06BT
+                - B08BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_airmass
+        - name: 24H-Microphysics-Cloud
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B10BT
+                - B07BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_24h_microphysics_cloud
+        - name: Night-Microphysics
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B04BT
+                - B10BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_night_microphysics
+        - name: Day-Microphysics
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B02Ref
+                - B04BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_microphysics
+        - name: Day-Severe-Storms
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B05BT
+                - B01Ref
+                - B04BT
+                - B06BT
+                - B03Ref
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_severe_storms
+        - name: Overshooting-Tops
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B08BT
+                - B05BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_overshooting_tops
+        - name: 24H-Microphysics-Dust
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B10BT
+                - B07BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_24h_microphysics_dust
+        - name: 24H-Microphysics-Ash
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B10BT
+                - B07BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_24h_microphysics_ash
+        - name: Day-Fire
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B02Ref
+                - B04BT
+                - B01Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_fire
+        - name: Day-Land-Cloud
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B02Ref
+                - B03Ref
+                - B01Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_land_cloud
+        - name: Day-Microphysics-(with-NIR-1.6,-Legacy)
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B02Ref
+                - B03Ref
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_microphysics_(with_nir_1.6,_legacy)
+        - name: Day-HRV-Cloud
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_hrv_cloud
+        - name: Day-Cloud-Convection
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B01Ref
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_cloud_convection
+        - name: HRV-Fog
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B03Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_hrv_fog
+        - name: Day-Snow-Fog
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B02Ref
+                - B04BT
+                - B03Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_snow-fog
+        - name: Airmass
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B05BT
+                - B06BT
+                - B09BT
+                - B08BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_airmass
+        - name: 24H-Microphysics-Cloud
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B07BT
+                - B09BT
+                - B10BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_24h_microphysics_cloud
+        - name: Night-Microphysics
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B04BT
+                - B09BT
+                - B10BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_night_microphysics
+        - name: Day-Microphysics
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B02Ref
+                - B09BT
+                - B04BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_microphysics
+        - name: Day-Severe-Storms
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B05BT
+                - B01Ref
+                - B03Ref
+                - B09BT
+                - B04BT
+                - B06BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_severe_storms
+        - name: Overshooting-Tops
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B05BT
+                - B09BT
+                - B08BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_overshooting_tops
+        - name: 24H-Microphysics-Dust
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B07BT
+                - B09BT
+                - B10BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_24h_microphysics_dust
+        - name: 24H-Microphysics-Ash
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B07BT
+                - B09BT
+                - B10BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_24h_microphysics_ash
+        - name: Day-Fire
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B02Ref
+                - B01Ref
+                - B04BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_fire
+        - name: Day-Land-Cloud
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B02Ref
+                - B01Ref
+                - B03Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_land_cloud
+        - name: Day-Microphysics-(with-NIR-1.6,-Legacy)
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B02Ref
+                - B09BT
+                - B03Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_microphysics_(with_nir_1.6,_legacy)
+        - name: Day-HRV-Cloud
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_hrv_cloud
+        - name: Day-Cloud-Convection
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B01Ref
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_cloud_convection
+        - name: HRV-Fog
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B03Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_hrv_fog
+        - name: Day-Snow-Fog
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B02Ref
+                - B04BT
+                - B03Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_snow-fog
+        - name: Airmass
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+                - B05BT
+                - B08BT
+                - B06BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_airmass
+        - name: 24H-Microphysics-Cloud
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B10BT
+                - B07BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_24h_microphysics_cloud
+        - name: Night-Microphysics
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B10BT
+                - B09BT
+                - B04BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_night_microphysics
+        - name: Day-Microphysics
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B02Ref
+                - B04BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_microphysics
+        - name: Day-Severe-Storms
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B01Ref
+                - B05BT
+                - B06BT
+                - B03Ref
+                - B04BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_severe_storms
+        - name: Overshooting-Tops
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B08BT
+                - B05BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_overshooting_tops
+        - name: 24H-Microphysics-Dust
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B10BT
+                - B07BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_24h_microphysics_dust
+        - name: 24H-Microphysics-Ash
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B10BT
+                - B07BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_24h_microphysics_ash
+        - name: Day-Fire
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B01Ref
+                - B02Ref
+                - B04BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_fire
+        - name: Day-Land-Cloud
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B03Ref
+                - B01Ref
+                - B02Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_land_cloud
+        - name: Day-Microphysics-(with-NIR-1.6,-Legacy)
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B03Ref
+                - B02Ref
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_microphysics_(with_nir_1.6,_legacy)
+        - name: Day-HRV-Cloud
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_hrv_cloud
+        - name: Day-Cloud-Convection
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B01Ref
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_cloud_convection
+        - name: HRV-Fog
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B03Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_hrv_fog
+        - name: Day-Snow-Fog
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B03Ref
+                - B02Ref
+                - B04BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_snow-fog
+        - name: Airmass
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B06BT
+                - B08BT
+                - B09BT
+                - B05BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_airmass
+        - name: 24H-Microphysics-Cloud
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B07BT
+                - B09BT
+                - B10BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_24h_microphysics_cloud
+        - name: Night-Microphysics
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B04BT
+                - B09BT
+                - B10BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_night_microphysics
+        - name: Day-Microphysics
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B02Ref
+                - B09BT
+                - B04BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_microphysics
+        - name: Day-Severe-Storms
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B05BT
+                - B06BT
+                - B09BT
+                - B04BT
+                - B03Ref
+                - B01Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_severe_storms
+        - name: Overshooting-Tops
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B08BT
+                - B09BT
+                - B05BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_overshooting_tops
+        - name: 24H-Microphysics-Dust
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B07BT
+                - B09BT
+                - B10BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_24h_microphysics_dust
+        - name: 24H-Microphysics-Ash
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B07BT
+                - B09BT
+                - B10BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_24h_microphysics_ash
+        - name: Day-Fire
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B02Ref
+                - B04BT
+                - B01Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_fire
+        - name: Day-Land-Cloud
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B02Ref
+                - B03Ref
+                - B01Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_land_cloud
+        - name: Day-Microphysics-(with-NIR-1.6,-Legacy)
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B02Ref
+                - B09BT
+                - B03Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_microphysics_(with_nir_1.6,_legacy)
+        - name: Day-HRV-Cloud
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_hrv_cloud
+        - name: Day-Cloud-Convection
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+                - B01Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_cloud_convection
+        - name: HRV-Fog
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B03Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_hrv_fog
+        - name: Day-Snow-Fog
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B02Ref
+                - B03Ref
+                - B04BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_snow-fog
+        - name: Airmass
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B06BT
+                - B08BT
+                - B05BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_airmass
+        - name: 24H-Microphysics-Cloud
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B07BT
+                - B10BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_24h_microphysics_cloud
+        - name: Night-Microphysics
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B04BT
+                - B10BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_night_microphysics
+        - name: Day-Microphysics
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B02Ref
+                - B04BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_microphysics
+        - name: Day-Severe-Storms
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B01Ref
+                - B06BT
+                - B05BT
+                - B09BT
+                - B03Ref
+                - B04BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_severe_storms
+        - name: Overshooting-Tops
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B08BT
+                - B05BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_overshooting_tops
+        - name: 24H-Microphysics-Dust
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B07BT
+                - B10BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_24h_microphysics_dust
+        - name: 24H-Microphysics-Ash
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B07BT
+                - B10BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_24h_microphysics_ash
+        - name: Day-Fire
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B01Ref
+                - B02Ref
+                - B04BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_fire
+        - name: Day-Land-Cloud
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B01Ref
+                - B03Ref
+                - B02Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_land_cloud
+        - name: Day-Microphysics-(with-NIR-1.6,-Legacy)
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B02Ref
+                - B03Ref
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_microphysics_(with_nir_1.6,_legacy)
+        - name: Day-HRV-Cloud
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_hrv_cloud
+        - name: Day-Cloud-Convection
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B01Ref
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_cloud_convection
+        - name: HRV-Fog
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B03Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_hrv_fog
+        - name: Day-Snow-Fog
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B02Ref
+                - B03Ref
+                - B04BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_snow-fog
+        - name: Airmass
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B06BT
+                - B09BT
+                - B08BT
+                - B05BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_airmass
+        - name: 24H-Microphysics-Cloud
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B07BT
+                - B10BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_24h_microphysics_cloud
+        - name: Night-Microphysics
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B10BT
+                - B04BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_night_microphysics
+        - name: Day-Microphysics
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B02Ref
+                - B04BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_microphysics
+        - name: Day-Severe-Storms
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B06BT
+                - B05BT
+                - B01Ref
+                - B03Ref
+                - B09BT
+                - B04BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_severe_storms
+        - name: Overshooting-Tops
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+                - B08BT
+                - B05BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_overshooting_tops
+        - name: 24H-Microphysics-Dust
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B07BT
+                - B10BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_24h_microphysics_dust
+        - name: 24H-Microphysics-Ash
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B07BT
+                - B10BT
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_24h_microphysics_ash
+        - name: Day-Fire
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B01Ref
+                - B02Ref
+                - B04BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_fire
+        - name: Day-Land-Cloud
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B01Ref
+                - B02Ref
+                - B03Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_land_cloud
+        - name: Day-Microphysics-(with-NIR-1.6,-Legacy)
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B02Ref
+                - B03Ref
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_microphysics_(with_nir_1.6,_legacy)
+        - name: Day-HRV-Cloud
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_hrv_cloud
+        - name: Day-Cloud-Convection
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B01Ref
+                - B09BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_cloud_convection
+        - name: HRV-Fog
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B03Ref
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_hrv_fog
+        - name: Day-Snow-Fog
+          product_defaults: RGB-Default
+          source_names: [seviri]
+          docstring: |
+            pass
+          spec:
+            variables:
+                - B03Ref
+                - B02Ref
+                - B04BT
+            algorithm:
+                plugin:
+                    name: config_rgb
+                    arguments:
+                        config_name: seviri_day_snow-fog

@@ -1,0 +1,35 @@
+interface: algorithm_configs
+apiVersion: geoips/v1
+name: ahi_day_cloud_phase
+family: standard
+docstring:
+    Configuration plugins for generic rgb recipes.
+spec:
+    algorithm: config_rgb
+    red:
+        equation:
+                type: raw
+                variables:
+                  - B05Ref
+        data_range: [0.0, 0.5]
+        gamma: 1.0
+        input_units: reflectance
+        output_units: reflectance
+    green:
+        equation:
+                type: raw
+                variables:
+                  - B06Ref
+        data_range: [0.0, 0.5]
+        gamma: 1.0
+        input_units: reflectance
+        output_units: reflectance
+    blue:
+        equation:
+                type: raw
+                variables:
+                  - B03Ref
+        data_range: [0.0, 1.0]
+        gamma: 1.0
+        input_units: reflectance
+        output_units: reflectance

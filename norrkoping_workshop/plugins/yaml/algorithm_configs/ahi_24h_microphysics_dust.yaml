@@ -1,6 +1,6 @@
 interface: algorithm_configs
 apiVersion: geoips/v1
-name: abi_airmass
+name: ahi_24h_microphysics_dust
 family: standard
 docstring:
     Configuration plugins for generic rgb recipes.
@@ -10,9 +10,9 @@ spec:
         equation:
                 type: difference
                 variables:
-                  - B08BT
-                  - B10BT
-        data_range: [-26.2, 0.6]
+                  - B15BT
+                  - B13BT
+        data_range: [-7.5, 3.0]
         gamma: 1.0
         input_units: kelvin
         output_units: kelvin
@@ -20,18 +20,18 @@ spec:
         equation:
                 type: difference
                 variables:
-                  - B12BT
-                  - B13BT
-        data_range: [-43.2, 6.7]
-        gamma: 1.0
+                  - B14BT
+                  - B11BT
+        data_range: [-0.5, 15.0]
+        gamma: 2.2
         input_units: kelvin
         output_units: kelvin
     blue:
         equation:
                 type: raw
                 variables:
-                  - B08BT
-        data_range: [243.9, 208.5]
+                  - B13BT
+        data_range: [261.5, 289.2]
         gamma: 1.0
         input_units: kelvin
         output_units: kelvin

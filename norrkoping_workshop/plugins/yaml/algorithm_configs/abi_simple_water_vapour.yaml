@@ -1,6 +1,6 @@
 interface: algorithm_configs
 apiVersion: geoips/v1
-name: abi_airmass
+name: abi_simple_water_vapour
 family: standard
 docstring:
     Configuration plugins for generic rgb recipes.
@@ -8,30 +8,28 @@ spec:
     algorithm: config_rgb
     red:
         equation:
-                type: difference
+                type: raw
                 variables:
-                  - B08BT
-                  - B10BT
-        data_range: [-26.2, 0.6]
-        gamma: 1.0
+                  - B13BT
+        data_range: [279.0, 202.3]
+        gamma: 10.0
         input_units: kelvin
         output_units: kelvin
     green:
         equation:
-                type: difference
+                type: raw
                 variables:
-                  - B12BT
-                  - B13BT
-        data_range: [-43.2, 6.7]
-        gamma: 1.0
+                  - B08BT
+        data_range: [242.7, 214.7]
+        gamma: 5.5
         input_units: kelvin
         output_units: kelvin
     blue:
         equation:
                 type: raw
                 variables:
-                  - B08BT
-        data_range: [243.9, 208.5]
-        gamma: 1.0
+                  - B10BT
+        data_range: [261.0, 245.1]
+        gamma: 5.5
         input_units: kelvin
         output_units: kelvin

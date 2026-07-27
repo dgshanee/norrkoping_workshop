@@ -1,6 +1,6 @@
 interface: algorithm_configs
 apiVersion: geoips/v1
-name: abi_airmass
+name: ahi_airmass
 family: standard
 docstring:
     Configuration plugins for generic rgb recipes.
@@ -12,7 +12,7 @@ spec:
                 variables:
                   - B08BT
                   - B10BT
-        data_range: [-26.2, 0.6]
+        data_range: [-25.8, 0.0]
         gamma: 1.0
         input_units: kelvin
         output_units: kelvin
@@ -22,7 +22,7 @@ spec:
                 variables:
                   - B12BT
                   - B13BT
-        data_range: [-43.2, 6.7]
+        data_range: [-41.5, 4.3]
         gamma: 1.0
         input_units: kelvin
         output_units: kelvin
@@ -31,7 +31,7 @@ spec:
                 type: raw
                 variables:
                   - B08BT
-        data_range: [243.9, 208.5]
+        data_range: [242.6, 208.0]
         gamma: 1.0
         input_units: kelvin
         output_units: kelvin

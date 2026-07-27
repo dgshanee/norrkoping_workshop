@@ -1,6 +1,6 @@
 interface: algorithm_configs
 apiVersion: geoips/v1
-name: abi_airmass
+name: seviri_day_fire
 family: standard
 docstring:
     Configuration plugins for generic rgb recipes.
@@ -8,30 +8,28 @@ spec:
     algorithm: config_rgb
     red:
         equation:
-                type: difference
+                type: raw
                 variables:
-                  - B08BT
-                  - B10BT
-        data_range: [-26.2, 0.6]
-        gamma: 1.0
+                  - B04BT
+        data_range: [273.0, 333.0]
+        gamma: 0.4
         input_units: kelvin
         output_units: kelvin
     green:
         equation:
-                type: difference
+                type: raw
                 variables:
-                  - B12BT
-                  - B13BT
-        data_range: [-43.2, 6.7]
+                  - B02Ref
+        data_range: [0.0, 1.0]
         gamma: 1.0
-        input_units: kelvin
-        output_units: kelvin
+        input_units: reflectance
+        output_units: reflectance
     blue:
         equation:
                 type: raw
                 variables:
-                  - B08BT
-        data_range: [243.9, 208.5]
+                  - B01Ref
+        data_range: [0.0, 1.0]
         gamma: 1.0
-        input_units: kelvin
-        output_units: kelvin
+        input_units: reflectance
+        output_units: reflectance

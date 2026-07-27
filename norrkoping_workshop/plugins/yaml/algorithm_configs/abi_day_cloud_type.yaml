@@ -1,0 +1,35 @@
+interface: algorithm_configs
+apiVersion: geoips/v1
+name: abi_day_cloud_type
+family: standard
+docstring:
+    Configuration plugins for generic rgb recipes.
+spec:
+    algorithm: config_rgb
+    red:
+        equation:
+                type: raw
+                variables:
+                  - B04Ref
+        data_range: [0.0, 0.1]
+        gamma: 1.5
+        input_units: reflectance
+        output_units: reflectance
+    green:
+        equation:
+                type: raw
+                variables:
+                  - B02Ref
+        data_range: [0.0, 0.78]
+        gamma: 1.0
+        input_units: reflectance
+        output_units: reflectance
+    blue:
+        equation:
+                type: raw
+                variables:
+                  - B05Ref
+        data_range: [0.0, 0.59]
+        gamma: 1.0
+        input_units: reflectance
+        output_units: reflectance
