@@ -11,7 +11,7 @@ geoips run single_source $GEOIPS_TESTDATA_DIR/test_data_ahi/data/20220109_2000_t
   --feature_annotator default \
   --resampled_read \
   --gridline_annotator default \
-  --sector_list conus
+  --sector_list japan
 retval=$?
 
 exit $retval
