@@ -1,0 +1,34 @@
+apiVersion: geoips/v1
+interface: workflows
+family: order_based
+name: fci_day_cloud_type
+docstring: |
+    pass
+spec:
+    globals:
+        product_name: Day-Cloud-Type
+    steps:
+        sector:
+            kind: sector
+            name: africa
+        reader:
+            kind: reader
+            name: fci_netcdf
+            arguments:
+                resampled_read: True
+        fci_Day_Cloud_Type:
+            kind: product
+            name: [fci, Day-Cloud-Type]
+            depends_on: [sector, reader]
+        filename_formatter:
+            kind: filename_formatter
+            name: geoips_fname
+            depends_on: [fci_Day_Cloud_Type.algorithm, sector, fci_Day_Cloud_Type.coverage_checker]
+        output_formatter:
+            kind: output_formatter
+            name: imagery_annotated
+            depends_on:
+                - fci_Day_Cloud_Type.algorithm
+                - fci_Day_Cloud_Type.colormapper
+                - filename_formatter
+                - sector

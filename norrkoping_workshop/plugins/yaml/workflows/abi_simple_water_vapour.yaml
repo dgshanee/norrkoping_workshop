@@ -1,0 +1,34 @@
+apiVersion: geoips/v1
+interface: workflows
+family: order_based
+name: abi_simple_water_vapour
+docstring: |
+    pass
+spec:
+    globals:
+        product_name: Simple-Water-Vapour
+    steps:
+        sector:
+            kind: sector
+            name: conus
+        reader:
+            kind: reader
+            name: abi_netcdf
+            arguments:
+                resampled_read: True
+        abi_Simple_Water_Vapour:
+            kind: product
+            name: [abi, Simple-Water-Vapour]
+            depends_on: [sector, reader]
+        filename_formatter:
+            kind: filename_formatter
+            name: geoips_fname
+            depends_on: [abi_Simple_Water_Vapour.algorithm, sector, abi_Simple_Water_Vapour.coverage_checker]
+        output_formatter:
+            kind: output_formatter
+            name: imagery_annotated
+            depends_on:
+                - abi_Simple_Water_Vapour.algorithm
+                - abi_Simple_Water_Vapour.colormapper
+                - filename_formatter
+                - sector

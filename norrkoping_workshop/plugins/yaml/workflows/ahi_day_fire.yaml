@@ -1,0 +1,34 @@
+apiVersion: geoips/v1
+interface: workflows
+family: order_based
+name: ahi_day_fire
+docstring: |
+    pass
+spec:
+    globals:
+        product_name: Day-Fire
+    steps:
+        sector:
+            kind: sector
+            name: japan
+        reader:
+            kind: reader
+            name: ahi_hsd
+            arguments:
+                resampled_read: True
+        ahi_Day_Fire:
+            kind: product
+            name: [ahi, Day-Fire]
+            depends_on: [sector, reader]
+        filename_formatter:
+            kind: filename_formatter
+            name: geoips_fname
+            depends_on: [ahi_Day_Fire.algorithm, sector, ahi_Day_Fire.coverage_checker]
+        output_formatter:
+            kind: output_formatter
+            name: imagery_annotated
+            depends_on:
+                - ahi_Day_Fire.algorithm
+                - ahi_Day_Fire.colormapper
+                - filename_formatter
+                - sector

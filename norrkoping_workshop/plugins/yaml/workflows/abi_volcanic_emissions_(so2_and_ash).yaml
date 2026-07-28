@@ -1,0 +1,34 @@
+apiVersion: geoips/v1
+interface: workflows
+family: order_based
+name: abi_volcanic_emissions_(so2_and_ash)
+docstring: |
+    pass
+spec:
+    globals:
+        product_name: Volcanic-Emissions-(SO2-and-Ash)
+    steps:
+        sector:
+            kind: sector
+            name: conus
+        reader:
+            kind: reader
+            name: abi_netcdf
+            arguments:
+                resampled_read: True
+        abi_Volcanic_Emissions_(SO2_and_Ash):
+            kind: product
+            name: [abi, Volcanic-Emissions-(SO2-and-Ash)]
+            depends_on: [sector, reader]
+        filename_formatter:
+            kind: filename_formatter
+            name: geoips_fname
+            depends_on: [abi_Volcanic_Emissions_(SO2_and_Ash).algorithm, sector, abi_Volcanic_Emissions_(SO2_and_Ash).coverage_checker]
+        output_formatter:
+            kind: output_formatter
+            name: imagery_annotated
+            depends_on:
+                - abi_Volcanic_Emissions_(SO2_and_Ash).algorithm
+                - abi_Volcanic_Emissions_(SO2_and_Ash).colormapper
+                - filename_formatter
+                - sector

@@ -1,0 +1,34 @@
+apiVersion: geoips/v1
+interface: workflows
+family: order_based
+name: seviri_day_hrv_cloud
+docstring: |
+    pass
+spec:
+    globals:
+        product_name: Day-HRV-Cloud
+    steps:
+        sector:
+            kind: sector
+            name: africa
+        reader:
+            kind: reader
+            name: seviri_hrit
+            arguments:
+                resampled_read: True
+        seviri_Day_HRV_Cloud:
+            kind: product
+            name: [seviri, Day-HRV-Cloud]
+            depends_on: [sector, reader]
+        filename_formatter:
+            kind: filename_formatter
+            name: geoips_fname
+            depends_on: [seviri_Day_HRV_Cloud.algorithm, sector, seviri_Day_HRV_Cloud.coverage_checker]
+        output_formatter:
+            kind: output_formatter
+            name: imagery_annotated
+            depends_on:
+                - seviri_Day_HRV_Cloud.algorithm
+                - seviri_Day_HRV_Cloud.colormapper
+                - filename_formatter
+                - sector

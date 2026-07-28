@@ -1,0 +1,34 @@
+apiVersion: geoips/v1
+interface: workflows
+family: order_based
+name: ahi_fire_temperature
+docstring: |
+    pass
+spec:
+    globals:
+        product_name: Fire-Temperature
+    steps:
+        sector:
+            kind: sector
+            name: japan
+        reader:
+            kind: reader
+            name: ahi_hsd
+            arguments:
+                resampled_read: True
+        ahi_Fire_Temperature:
+            kind: product
+            name: [ahi, Fire-Temperature]
+            depends_on: [sector, reader]
+        filename_formatter:
+            kind: filename_formatter
+            name: geoips_fname
+            depends_on: [ahi_Fire_Temperature.algorithm, sector, ahi_Fire_Temperature.coverage_checker]
+        output_formatter:
+            kind: output_formatter
+            name: imagery_annotated
+            depends_on:
+                - ahi_Fire_Temperature.algorithm
+                - ahi_Fire_Temperature.colormapper
+                - filename_formatter
+                - sector
