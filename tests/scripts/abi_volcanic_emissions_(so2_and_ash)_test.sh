@@ -2,7 +2,7 @@
 
 geoips run single_source $GEOIPS_TESTDATA_DIR/test_data_abi/data/goes16_20200918_1950/* \
     --reader_name abi_netcdf \
-    --product_name Volcanic-Emissions-(SO2-and-Ash) \
+    --product_name VolcanicEmissions(SO2andAsh) \
     --output_formatter imagery_annotated \
     --filename_formatter geoips_fname \
     --logging_level info \
