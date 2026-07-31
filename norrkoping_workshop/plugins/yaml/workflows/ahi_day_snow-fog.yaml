@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Day-Snow-Fog
+        product_name: DaySnow-Fog
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: ahi_hsd
             arguments:
                 resampled_read: True
-        ahi_Day_Snow-Fog:
+        ahi_DaySnow-Fog:
             kind: product
-            name: [ahi, Day-Snow-Fog]
+            name: [ahi, DaySnow-Fog]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [ahi_Day_Snow-Fog.algorithm, sector, ahi_Day_Snow-Fog.coverage_checker]
+            depends_on: [ahi_DaySnow-Fog.algorithm, sector, ahi_DaySnow-Fog.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - ahi_Day_Snow-Fog.algorithm
-                - ahi_Day_Snow-Fog.colormapper
+                - ahi_DaySnow-Fog.algorithm
+                - ahi_DaySnow-Fog.colormapper
                 - filename_formatter
                 - sector

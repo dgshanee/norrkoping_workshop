@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Day-Snow-Fog
+        product_name: DaySnow-Fog
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: abi_netcdf
             arguments:
                 resampled_read: True
-        abi_Day_Snow-Fog:
+        abi_DaySnow-Fog:
             kind: product
-            name: [abi, Day-Snow-Fog]
+            name: [abi, DaySnow-Fog]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [abi_Day_Snow-Fog.algorithm, sector, abi_Day_Snow-Fog.coverage_checker]
+            depends_on: [abi_DaySnow-Fog.algorithm, sector, abi_DaySnow-Fog.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - abi_Day_Snow-Fog.algorithm
-                - abi_Day_Snow-Fog.colormapper
+                - abi_DaySnow-Fog.algorithm
+                - abi_DaySnow-Fog.colormapper
                 - filename_formatter
                 - sector

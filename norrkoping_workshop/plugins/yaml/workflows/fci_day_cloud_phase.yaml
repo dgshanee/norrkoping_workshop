@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Day-Cloud-Phase
+        product_name: DayCloudPhase
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: fci_netcdf
             arguments:
                 resampled_read: True
-        fci_Day_Cloud_Phase:
+        fci_DayCloudPhase:
             kind: product
-            name: [fci, Day-Cloud-Phase]
+            name: [fci, DayCloudPhase]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [fci_Day_Cloud_Phase.algorithm, sector, fci_Day_Cloud_Phase.coverage_checker]
+            depends_on: [fci_DayCloudPhase.algorithm, sector, fci_DayCloudPhase.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - fci_Day_Cloud_Phase.algorithm
-                - fci_Day_Cloud_Phase.colormapper
+                - fci_DayCloudPhase.algorithm
+                - fci_DayCloudPhase.colormapper
                 - filename_formatter
                 - sector

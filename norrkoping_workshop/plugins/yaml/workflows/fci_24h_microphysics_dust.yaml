@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: 24H-Microphysics-Dust
+        product_name: 24HMicrophysicsDust
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: fci_netcdf
             arguments:
                 resampled_read: True
-        fci_24H_Microphysics_Dust:
+        fci_24HMicrophysicsDust:
             kind: product
-            name: [fci, 24H-Microphysics-Dust]
+            name: [fci, 24HMicrophysicsDust]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [fci_24H_Microphysics_Dust.algorithm, sector, fci_24H_Microphysics_Dust.coverage_checker]
+            depends_on: [fci_24HMicrophysicsDust.algorithm, sector, fci_24HMicrophysicsDust.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - fci_24H_Microphysics_Dust.algorithm
-                - fci_24H_Microphysics_Dust.colormapper
+                - fci_24HMicrophysicsDust.algorithm
+                - fci_24HMicrophysicsDust.colormapper
                 - filename_formatter
                 - sector

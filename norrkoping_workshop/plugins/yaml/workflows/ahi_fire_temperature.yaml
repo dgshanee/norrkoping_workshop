@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Fire-Temperature
+        product_name: FireTemperature
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: ahi_hsd
             arguments:
                 resampled_read: True
-        ahi_Fire_Temperature:
+        ahi_FireTemperature:
             kind: product
-            name: [ahi, Fire-Temperature]
+            name: [ahi, FireTemperature]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [ahi_Fire_Temperature.algorithm, sector, ahi_Fire_Temperature.coverage_checker]
+            depends_on: [ahi_FireTemperature.algorithm, sector, ahi_FireTemperature.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - ahi_Fire_Temperature.algorithm
-                - ahi_Fire_Temperature.colormapper
+                - ahi_FireTemperature.algorithm
+                - ahi_FireTemperature.colormapper
                 - filename_formatter
                 - sector

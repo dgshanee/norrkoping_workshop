@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Day-Cloud-Type
+        product_name: DayCloudType
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: abi_netcdf
             arguments:
                 resampled_read: True
-        abi_Day_Cloud_Type:
+        abi_DayCloudType:
             kind: product
-            name: [abi, Day-Cloud-Type]
+            name: [abi, DayCloudType]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [abi_Day_Cloud_Type.algorithm, sector, abi_Day_Cloud_Type.coverage_checker]
+            depends_on: [abi_DayCloudType.algorithm, sector, abi_DayCloudType.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - abi_Day_Cloud_Type.algorithm
-                - abi_Day_Cloud_Type.colormapper
+                - abi_DayCloudType.algorithm
+                - abi_DayCloudType.colormapper
                 - filename_formatter
                 - sector

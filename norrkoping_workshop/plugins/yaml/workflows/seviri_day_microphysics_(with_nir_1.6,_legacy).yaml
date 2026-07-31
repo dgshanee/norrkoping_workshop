@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Day-Microphysics-(with-NIR-1.6,-Legacy)
+        product_name: DayMicrophysics(withNIR1.6,Legacy)
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: seviri_hrit
             arguments:
                 resampled_read: True
-        seviri_Day_Microphysics_(with_NIR_1.6,_Legacy):
+        seviri_DayMicrophysics(withNIR1.6,Legacy):
             kind: product
-            name: [seviri, Day-Microphysics-(with-NIR-1.6,-Legacy)]
+            name: [seviri, DayMicrophysics(withNIR1.6,Legacy)]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [seviri_Day_Microphysics_(with_NIR_1.6,_Legacy).algorithm, sector, seviri_Day_Microphysics_(with_NIR_1.6,_Legacy).coverage_checker]
+            depends_on: [seviri_DayMicrophysics(withNIR1.6,Legacy).algorithm, sector, seviri_DayMicrophysics(withNIR1.6,Legacy).coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - seviri_Day_Microphysics_(with_NIR_1.6,_Legacy).algorithm
-                - seviri_Day_Microphysics_(with_NIR_1.6,_Legacy).colormapper
+                - seviri_DayMicrophysics(withNIR1.6,Legacy).algorithm
+                - seviri_DayMicrophysics(withNIR1.6,Legacy).colormapper
                 - filename_formatter
                 - sector

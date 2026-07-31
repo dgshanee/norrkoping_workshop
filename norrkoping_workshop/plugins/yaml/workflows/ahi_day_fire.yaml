@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Day-Fire
+        product_name: DayFire
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: ahi_hsd
             arguments:
                 resampled_read: True
-        ahi_Day_Fire:
+        ahi_DayFire:
             kind: product
-            name: [ahi, Day-Fire]
+            name: [ahi, DayFire]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [ahi_Day_Fire.algorithm, sector, ahi_Day_Fire.coverage_checker]
+            depends_on: [ahi_DayFire.algorithm, sector, ahi_DayFire.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - ahi_Day_Fire.algorithm
-                - ahi_Day_Fire.colormapper
+                - ahi_DayFire.algorithm
+                - ahi_DayFire.colormapper
                 - filename_formatter
                 - sector

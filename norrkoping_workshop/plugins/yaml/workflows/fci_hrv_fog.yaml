@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: HRV-Fog
+        product_name: HRVFog
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: fci_netcdf
             arguments:
                 resampled_read: True
-        fci_HRV_Fog:
+        fci_HRVFog:
             kind: product
-            name: [fci, HRV-Fog]
+            name: [fci, HRVFog]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [fci_HRV_Fog.algorithm, sector, fci_HRV_Fog.coverage_checker]
+            depends_on: [fci_HRVFog.algorithm, sector, fci_HRVFog.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - fci_HRV_Fog.algorithm
-                - fci_HRV_Fog.colormapper
+                - fci_HRVFog.algorithm
+                - fci_HRVFog.colormapper
                 - filename_formatter
                 - sector

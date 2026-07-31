@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Night-Microphysics
+        product_name: NightMicrophysics
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: seviri_hrit
             arguments:
                 resampled_read: True
-        seviri_Night_Microphysics:
+        seviri_NightMicrophysics:
             kind: product
-            name: [seviri, Night-Microphysics]
+            name: [seviri, NightMicrophysics]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [seviri_Night_Microphysics.algorithm, sector, seviri_Night_Microphysics.coverage_checker]
+            depends_on: [seviri_NightMicrophysics.algorithm, sector, seviri_NightMicrophysics.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - seviri_Night_Microphysics.algorithm
-                - seviri_Night_Microphysics.colormapper
+                - seviri_NightMicrophysics.algorithm
+                - seviri_NightMicrophysics.colormapper
                 - filename_formatter
                 - sector

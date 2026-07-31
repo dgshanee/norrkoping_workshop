@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Day-Land-Cloud
+        product_name: DayLandCloud
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: seviri_hrit
             arguments:
                 resampled_read: True
-        seviri_Day_Land_Cloud:
+        seviri_DayLandCloud:
             kind: product
-            name: [seviri, Day-Land-Cloud]
+            name: [seviri, DayLandCloud]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [seviri_Day_Land_Cloud.algorithm, sector, seviri_Day_Land_Cloud.coverage_checker]
+            depends_on: [seviri_DayLandCloud.algorithm, sector, seviri_DayLandCloud.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - seviri_Day_Land_Cloud.algorithm
-                - seviri_Day_Land_Cloud.colormapper
+                - seviri_DayLandCloud.algorithm
+                - seviri_DayLandCloud.colormapper
                 - filename_formatter
                 - sector

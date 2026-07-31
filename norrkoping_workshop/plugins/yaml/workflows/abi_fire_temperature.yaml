@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Fire-Temperature
+        product_name: FireTemperature
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: abi_netcdf
             arguments:
                 resampled_read: True
-        abi_Fire_Temperature:
+        abi_FireTemperature:
             kind: product
-            name: [abi, Fire-Temperature]
+            name: [abi, FireTemperature]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [abi_Fire_Temperature.algorithm, sector, abi_Fire_Temperature.coverage_checker]
+            depends_on: [abi_FireTemperature.algorithm, sector, abi_FireTemperature.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - abi_Fire_Temperature.algorithm
-                - abi_Fire_Temperature.colormapper
+                - abi_FireTemperature.algorithm
+                - abi_FireTemperature.colormapper
                 - filename_formatter
                 - sector

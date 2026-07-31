@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Day-Fire
+        product_name: DayFire
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: fci_netcdf
             arguments:
                 resampled_read: True
-        fci_Day_Fire:
+        fci_DayFire:
             kind: product
-            name: [fci, Day-Fire]
+            name: [fci, DayFire]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [fci_Day_Fire.algorithm, sector, fci_Day_Fire.coverage_checker]
+            depends_on: [fci_DayFire.algorithm, sector, fci_DayFire.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - fci_Day_Fire.algorithm
-                - fci_Day_Fire.colormapper
+                - fci_DayFire.algorithm
+                - fci_DayFire.colormapper
                 - filename_formatter
                 - sector

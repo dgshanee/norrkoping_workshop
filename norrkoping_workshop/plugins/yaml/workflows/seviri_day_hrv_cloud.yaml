@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Day-HRV-Cloud
+        product_name: DayHRVCloud
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: seviri_hrit
             arguments:
                 resampled_read: True
-        seviri_Day_HRV_Cloud:
+        seviri_DayHRVCloud:
             kind: product
-            name: [seviri, Day-HRV-Cloud]
+            name: [seviri, DayHRVCloud]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [seviri_Day_HRV_Cloud.algorithm, sector, seviri_Day_HRV_Cloud.coverage_checker]
+            depends_on: [seviri_DayHRVCloud.algorithm, sector, seviri_DayHRVCloud.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - seviri_Day_HRV_Cloud.algorithm
-                - seviri_Day_HRV_Cloud.colormapper
+                - seviri_DayHRVCloud.algorithm
+                - seviri_DayHRVCloud.colormapper
                 - filename_formatter
                 - sector

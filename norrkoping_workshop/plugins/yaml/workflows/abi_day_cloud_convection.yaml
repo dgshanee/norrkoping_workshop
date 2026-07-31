@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Day-Cloud-Convection
+        product_name: DayCloudConvection
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: abi_netcdf
             arguments:
                 resampled_read: True
-        abi_Day_Cloud_Convection:
+        abi_DayCloudConvection:
             kind: product
-            name: [abi, Day-Cloud-Convection]
+            name: [abi, DayCloudConvection]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [abi_Day_Cloud_Convection.algorithm, sector, abi_Day_Cloud_Convection.coverage_checker]
+            depends_on: [abi_DayCloudConvection.algorithm, sector, abi_DayCloudConvection.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - abi_Day_Cloud_Convection.algorithm
-                - abi_Day_Cloud_Convection.colormapper
+                - abi_DayCloudConvection.algorithm
+                - abi_DayCloudConvection.colormapper
                 - filename_formatter
                 - sector

@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Overshooting-Tops
+        product_name: OvershootingTops
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: seviri_hrit
             arguments:
                 resampled_read: True
-        seviri_Overshooting_Tops:
+        seviri_OvershootingTops:
             kind: product
-            name: [seviri, Overshooting-Tops]
+            name: [seviri, OvershootingTops]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [seviri_Overshooting_Tops.algorithm, sector, seviri_Overshooting_Tops.coverage_checker]
+            depends_on: [seviri_OvershootingTops.algorithm, sector, seviri_OvershootingTops.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - seviri_Overshooting_Tops.algorithm
-                - seviri_Overshooting_Tops.colormapper
+                - seviri_OvershootingTops.algorithm
+                - seviri_OvershootingTops.colormapper
                 - filename_formatter
                 - sector

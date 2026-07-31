@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Day-Microphysics-(with-NIR-1.6,-Legacy)
+        product_name: DayMicrophysics(withNIR1.6,Legacy)
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: abi_netcdf
             arguments:
                 resampled_read: True
-        abi_Day_Microphysics_(with_NIR_1.6,_Legacy):
+        abi_DayMicrophysics(withNIR1.6,Legacy):
             kind: product
-            name: [abi, Day-Microphysics-(with-NIR-1.6,-Legacy)]
+            name: [abi, DayMicrophysics(withNIR1.6,Legacy)]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [abi_Day_Microphysics_(with_NIR_1.6,_Legacy).algorithm, sector, abi_Day_Microphysics_(with_NIR_1.6,_Legacy).coverage_checker]
+            depends_on: [abi_DayMicrophysics(withNIR1.6,Legacy).algorithm, sector, abi_DayMicrophysics(withNIR1.6,Legacy).coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - abi_Day_Microphysics_(with_NIR_1.6,_Legacy).algorithm
-                - abi_Day_Microphysics_(with_NIR_1.6,_Legacy).colormapper
+                - abi_DayMicrophysics(withNIR1.6,Legacy).algorithm
+                - abi_DayMicrophysics(withNIR1.6,Legacy).colormapper
                 - filename_formatter
                 - sector

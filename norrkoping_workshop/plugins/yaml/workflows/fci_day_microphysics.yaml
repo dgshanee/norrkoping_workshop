@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Day-Microphysics
+        product_name: DayMicrophysics
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: fci_netcdf
             arguments:
                 resampled_read: True
-        fci_Day_Microphysics:
+        fci_DayMicrophysics:
             kind: product
-            name: [fci, Day-Microphysics]
+            name: [fci, DayMicrophysics]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [fci_Day_Microphysics.algorithm, sector, fci_Day_Microphysics.coverage_checker]
+            depends_on: [fci_DayMicrophysics.algorithm, sector, fci_DayMicrophysics.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - fci_Day_Microphysics.algorithm
-                - fci_Day_Microphysics.colormapper
+                - fci_DayMicrophysics.algorithm
+                - fci_DayMicrophysics.colormapper
                 - filename_formatter
                 - sector

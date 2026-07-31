@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Simple-Water-Vapour
+        product_name: SimpleWaterVapour
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: ahi_hsd
             arguments:
                 resampled_read: True
-        ahi_Simple_Water_Vapour:
+        ahi_SimpleWaterVapour:
             kind: product
-            name: [ahi, Simple-Water-Vapour]
+            name: [ahi, SimpleWaterVapour]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [ahi_Simple_Water_Vapour.algorithm, sector, ahi_Simple_Water_Vapour.coverage_checker]
+            depends_on: [ahi_SimpleWaterVapour.algorithm, sector, ahi_SimpleWaterVapour.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - ahi_Simple_Water_Vapour.algorithm
-                - ahi_Simple_Water_Vapour.colormapper
+                - ahi_SimpleWaterVapour.algorithm
+                - ahi_SimpleWaterVapour.colormapper
                 - filename_formatter
                 - sector

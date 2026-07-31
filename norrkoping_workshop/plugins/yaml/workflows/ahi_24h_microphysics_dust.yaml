@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: 24H-Microphysics-Dust
+        product_name: 24HMicrophysicsDust
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: ahi_hsd
             arguments:
                 resampled_read: True
-        ahi_24H_Microphysics_Dust:
+        ahi_24HMicrophysicsDust:
             kind: product
-            name: [ahi, 24H-Microphysics-Dust]
+            name: [ahi, 24HMicrophysicsDust]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [ahi_24H_Microphysics_Dust.algorithm, sector, ahi_24H_Microphysics_Dust.coverage_checker]
+            depends_on: [ahi_24HMicrophysicsDust.algorithm, sector, ahi_24HMicrophysicsDust.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - ahi_24H_Microphysics_Dust.algorithm
-                - ahi_24H_Microphysics_Dust.colormapper
+                - ahi_24HMicrophysicsDust.algorithm
+                - ahi_24HMicrophysicsDust.colormapper
                 - filename_formatter
                 - sector

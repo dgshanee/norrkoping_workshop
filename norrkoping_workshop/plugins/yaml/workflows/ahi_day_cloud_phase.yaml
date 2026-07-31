@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Day-Cloud-Phase
+        product_name: DayCloudPhase
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: ahi_hsd
             arguments:
                 resampled_read: True
-        ahi_Day_Cloud_Phase:
+        ahi_DayCloudPhase:
             kind: product
-            name: [ahi, Day-Cloud-Phase]
+            name: [ahi, DayCloudPhase]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [ahi_Day_Cloud_Phase.algorithm, sector, ahi_Day_Cloud_Phase.coverage_checker]
+            depends_on: [ahi_DayCloudPhase.algorithm, sector, ahi_DayCloudPhase.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - ahi_Day_Cloud_Phase.algorithm
-                - ahi_Day_Cloud_Phase.colormapper
+                - ahi_DayCloudPhase.algorithm
+                - ahi_DayCloudPhase.colormapper
                 - filename_formatter
                 - sector

@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: HRV-Fog
+        product_name: HRVFog
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: abi_netcdf
             arguments:
                 resampled_read: True
-        abi_HRV_Fog:
+        abi_HRVFog:
             kind: product
-            name: [abi, HRV-Fog]
+            name: [abi, HRVFog]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [abi_HRV_Fog.algorithm, sector, abi_HRV_Fog.coverage_checker]
+            depends_on: [abi_HRVFog.algorithm, sector, abi_HRVFog.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - abi_HRV_Fog.algorithm
-                - abi_HRV_Fog.colormapper
+                - abi_HRVFog.algorithm
+                - abi_HRVFog.colormapper
                 - filename_formatter
                 - sector

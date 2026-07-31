@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Day-Severe-Storms
+        product_name: DaySevereStorms
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: abi_netcdf
             arguments:
                 resampled_read: True
-        abi_Day_Severe_Storms:
+        abi_DaySevereStorms:
             kind: product
-            name: [abi, Day-Severe-Storms]
+            name: [abi, DaySevereStorms]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [abi_Day_Severe_Storms.algorithm, sector, abi_Day_Severe_Storms.coverage_checker]
+            depends_on: [abi_DaySevereStorms.algorithm, sector, abi_DaySevereStorms.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - abi_Day_Severe_Storms.algorithm
-                - abi_Day_Severe_Storms.colormapper
+                - abi_DaySevereStorms.algorithm
+                - abi_DaySevereStorms.colormapper
                 - filename_formatter
                 - sector

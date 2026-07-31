@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: 24H-Microphysics-Dust
+        product_name: 24HMicrophysicsDust
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: seviri_hrit
             arguments:
                 resampled_read: True
-        seviri_24H_Microphysics_Dust:
+        seviri_24HMicrophysicsDust:
             kind: product
-            name: [seviri, 24H-Microphysics-Dust]
+            name: [seviri, 24HMicrophysicsDust]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [seviri_24H_Microphysics_Dust.algorithm, sector, seviri_24H_Microphysics_Dust.coverage_checker]
+            depends_on: [seviri_24HMicrophysicsDust.algorithm, sector, seviri_24HMicrophysicsDust.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - seviri_24H_Microphysics_Dust.algorithm
-                - seviri_24H_Microphysics_Dust.colormapper
+                - seviri_24HMicrophysicsDust.algorithm
+                - seviri_24HMicrophysicsDust.colormapper
                 - filename_formatter
                 - sector

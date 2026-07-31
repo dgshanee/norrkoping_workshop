@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Night-Microphysics
+        product_name: NightMicrophysics
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: ahi_hsd
             arguments:
                 resampled_read: True
-        ahi_Night_Microphysics:
+        ahi_NightMicrophysics:
             kind: product
-            name: [ahi, Night-Microphysics]
+            name: [ahi, NightMicrophysics]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [ahi_Night_Microphysics.algorithm, sector, ahi_Night_Microphysics.coverage_checker]
+            depends_on: [ahi_NightMicrophysics.algorithm, sector, ahi_NightMicrophysics.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - ahi_Night_Microphysics.algorithm
-                - ahi_Night_Microphysics.colormapper
+                - ahi_NightMicrophysics.algorithm
+                - ahi_NightMicrophysics.colormapper
                 - filename_formatter
                 - sector

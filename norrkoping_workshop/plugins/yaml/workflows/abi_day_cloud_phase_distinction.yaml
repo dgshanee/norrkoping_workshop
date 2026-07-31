@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Day-Cloud-Phase-Distinction
+        product_name: DayCloudPhaseDistinction
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: abi_netcdf
             arguments:
                 resampled_read: True
-        abi_Day_Cloud_Phase_Distinction:
+        abi_DayCloudPhaseDistinction:
             kind: product
-            name: [abi, Day-Cloud-Phase-Distinction]
+            name: [abi, DayCloudPhaseDistinction]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [abi_Day_Cloud_Phase_Distinction.algorithm, sector, abi_Day_Cloud_Phase_Distinction.coverage_checker]
+            depends_on: [abi_DayCloudPhaseDistinction.algorithm, sector, abi_DayCloudPhaseDistinction.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - abi_Day_Cloud_Phase_Distinction.algorithm
-                - abi_Day_Cloud_Phase_Distinction.colormapper
+                - abi_DayCloudPhaseDistinction.algorithm
+                - abi_DayCloudPhaseDistinction.colormapper
                 - filename_formatter
                 - sector

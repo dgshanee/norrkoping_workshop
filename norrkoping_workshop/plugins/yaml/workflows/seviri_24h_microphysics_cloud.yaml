@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: 24H-Microphysics-Cloud
+        product_name: 24HMicrophysicsCloud
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: seviri_hrit
             arguments:
                 resampled_read: True
-        seviri_24H_Microphysics_Cloud:
+        seviri_24HMicrophysicsCloud:
             kind: product
-            name: [seviri, 24H-Microphysics-Cloud]
+            name: [seviri, 24HMicrophysicsCloud]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [seviri_24H_Microphysics_Cloud.algorithm, sector, seviri_24H_Microphysics_Cloud.coverage_checker]
+            depends_on: [seviri_24HMicrophysicsCloud.algorithm, sector, seviri_24HMicrophysicsCloud.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - seviri_24H_Microphysics_Cloud.algorithm
-                - seviri_24H_Microphysics_Cloud.colormapper
+                - seviri_24HMicrophysicsCloud.algorithm
+                - seviri_24HMicrophysicsCloud.colormapper
                 - filename_formatter
                 - sector

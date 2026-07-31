@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: 24H-Microphysics-Ash
+        product_name: 24HMicrophysicsAsh
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: ahi_hsd
             arguments:
                 resampled_read: True
-        ahi_24H_Microphysics_Ash:
+        ahi_24HMicrophysicsAsh:
             kind: product
-            name: [ahi, 24H-Microphysics-Ash]
+            name: [ahi, 24HMicrophysicsAsh]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [ahi_24H_Microphysics_Ash.algorithm, sector, ahi_24H_Microphysics_Ash.coverage_checker]
+            depends_on: [ahi_24HMicrophysicsAsh.algorithm, sector, ahi_24HMicrophysicsAsh.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - ahi_24H_Microphysics_Ash.algorithm
-                - ahi_24H_Microphysics_Ash.colormapper
+                - ahi_24HMicrophysicsAsh.algorithm
+                - ahi_24HMicrophysicsAsh.colormapper
                 - filename_formatter
                 - sector

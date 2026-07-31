@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Day-Fire
+        product_name: DayFire
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: seviri_hrit
             arguments:
                 resampled_read: True
-        seviri_Day_Fire:
+        seviri_DayFire:
             kind: product
-            name: [seviri, Day-Fire]
+            name: [seviri, DayFire]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [seviri_Day_Fire.algorithm, sector, seviri_Day_Fire.coverage_checker]
+            depends_on: [seviri_DayFire.algorithm, sector, seviri_DayFire.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - seviri_Day_Fire.algorithm
-                - seviri_Day_Fire.colormapper
+                - seviri_DayFire.algorithm
+                - seviri_DayFire.colormapper
                 - filename_formatter
                 - sector

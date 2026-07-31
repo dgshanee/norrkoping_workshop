@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Day-Severe-Storms
+        product_name: DaySevereStorms
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: ahi_hsd
             arguments:
                 resampled_read: True
-        ahi_Day_Severe_Storms:
+        ahi_DaySevereStorms:
             kind: product
-            name: [ahi, Day-Severe-Storms]
+            name: [ahi, DaySevereStorms]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [ahi_Day_Severe_Storms.algorithm, sector, ahi_Day_Severe_Storms.coverage_checker]
+            depends_on: [ahi_DaySevereStorms.algorithm, sector, ahi_DaySevereStorms.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - ahi_Day_Severe_Storms.algorithm
-                - ahi_Day_Severe_Storms.colormapper
+                - ahi_DaySevereStorms.algorithm
+                - ahi_DaySevereStorms.colormapper
                 - filename_formatter
                 - sector

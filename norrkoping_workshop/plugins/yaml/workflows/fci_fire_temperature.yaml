@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Fire-Temperature
+        product_name: FireTemperature
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: fci_netcdf
             arguments:
                 resampled_read: True
-        fci_Fire_Temperature:
+        fci_FireTemperature:
             kind: product
-            name: [fci, Fire-Temperature]
+            name: [fci, FireTemperature]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [fci_Fire_Temperature.algorithm, sector, fci_Fire_Temperature.coverage_checker]
+            depends_on: [fci_FireTemperature.algorithm, sector, fci_FireTemperature.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - fci_Fire_Temperature.algorithm
-                - fci_Fire_Temperature.colormapper
+                - fci_FireTemperature.algorithm
+                - fci_FireTemperature.colormapper
                 - filename_formatter
                 - sector

@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Day-Cloud-Convection
+        product_name: DayCloudConvection
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: seviri_hrit
             arguments:
                 resampled_read: True
-        seviri_Day_Cloud_Convection:
+        seviri_DayCloudConvection:
             kind: product
-            name: [seviri, Day-Cloud-Convection]
+            name: [seviri, DayCloudConvection]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [seviri_Day_Cloud_Convection.algorithm, sector, seviri_Day_Cloud_Convection.coverage_checker]
+            depends_on: [seviri_DayCloudConvection.algorithm, sector, seviri_DayCloudConvection.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - seviri_Day_Cloud_Convection.algorithm
-                - seviri_Day_Cloud_Convection.colormapper
+                - seviri_DayCloudConvection.algorithm
+                - seviri_DayCloudConvection.colormapper
                 - filename_formatter
                 - sector

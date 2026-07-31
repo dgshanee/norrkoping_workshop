@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Volcanic-Emissions-(SO2-and-Ash)
+        product_name: VolcanicEmissions(SO2andAsh)
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: fci_netcdf
             arguments:
                 resampled_read: True
-        fci_Volcanic_Emissions_(SO2_and_Ash):
+        fci_VolcanicEmissions(SO2andAsh):
             kind: product
-            name: [fci, Volcanic-Emissions-(SO2-and-Ash)]
+            name: [fci, VolcanicEmissions(SO2andAsh)]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [fci_Volcanic_Emissions_(SO2_and_Ash).algorithm, sector, fci_Volcanic_Emissions_(SO2_and_Ash).coverage_checker]
+            depends_on: [fci_VolcanicEmissions(SO2andAsh).algorithm, sector, fci_VolcanicEmissions(SO2andAsh).coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - fci_Volcanic_Emissions_(SO2_and_Ash).algorithm
-                - fci_Volcanic_Emissions_(SO2_and_Ash).colormapper
+                - fci_VolcanicEmissions(SO2andAsh).algorithm
+                - fci_VolcanicEmissions(SO2andAsh).colormapper
                 - filename_formatter
                 - sector

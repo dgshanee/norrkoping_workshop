@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Day-Microphysics
+        product_name: DayMicrophysics
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: ahi_hsd
             arguments:
                 resampled_read: True
-        ahi_Day_Microphysics:
+        ahi_DayMicrophysics:
             kind: product
-            name: [ahi, Day-Microphysics]
+            name: [ahi, DayMicrophysics]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [ahi_Day_Microphysics.algorithm, sector, ahi_Day_Microphysics.coverage_checker]
+            depends_on: [ahi_DayMicrophysics.algorithm, sector, ahi_DayMicrophysics.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - ahi_Day_Microphysics.algorithm
-                - ahi_Day_Microphysics.colormapper
+                - ahi_DayMicrophysics.algorithm
+                - ahi_DayMicrophysics.colormapper
                 - filename_formatter
                 - sector

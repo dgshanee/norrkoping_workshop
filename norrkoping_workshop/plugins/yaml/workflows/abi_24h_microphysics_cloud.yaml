@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: 24H-Microphysics-Cloud
+        product_name: 24HMicrophysicsCloud
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: abi_netcdf
             arguments:
                 resampled_read: True
-        abi_24H_Microphysics_Cloud:
+        abi_24HMicrophysicsCloud:
             kind: product
-            name: [abi, 24H-Microphysics-Cloud]
+            name: [abi, 24HMicrophysicsCloud]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [abi_24H_Microphysics_Cloud.algorithm, sector, abi_24H_Microphysics_Cloud.coverage_checker]
+            depends_on: [abi_24HMicrophysicsCloud.algorithm, sector, abi_24HMicrophysicsCloud.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - abi_24H_Microphysics_Cloud.algorithm
-                - abi_24H_Microphysics_Cloud.colormapper
+                - abi_24HMicrophysicsCloud.algorithm
+                - abi_24HMicrophysicsCloud.colormapper
                 - filename_formatter
                 - sector

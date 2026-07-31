@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Night-Microphysics
+        product_name: NightMicrophysics
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: abi_netcdf
             arguments:
                 resampled_read: True
-        abi_Night_Microphysics:
+        abi_NightMicrophysics:
             kind: product
-            name: [abi, Night-Microphysics]
+            name: [abi, NightMicrophysics]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [abi_Night_Microphysics.algorithm, sector, abi_Night_Microphysics.coverage_checker]
+            depends_on: [abi_NightMicrophysics.algorithm, sector, abi_NightMicrophysics.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - abi_Night_Microphysics.algorithm
-                - abi_Night_Microphysics.colormapper
+                - abi_NightMicrophysics.algorithm
+                - abi_NightMicrophysics.colormapper
                 - filename_formatter
                 - sector

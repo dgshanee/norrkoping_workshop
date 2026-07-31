@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Day-Snow-Fog
+        product_name: DaySnow-Fog
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: seviri_hrit
             arguments:
                 resampled_read: True
-        seviri_Day_Snow-Fog:
+        seviri_DaySnow-Fog:
             kind: product
-            name: [seviri, Day-Snow-Fog]
+            name: [seviri, DaySnow-Fog]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [seviri_Day_Snow-Fog.algorithm, sector, seviri_Day_Snow-Fog.coverage_checker]
+            depends_on: [seviri_DaySnow-Fog.algorithm, sector, seviri_DaySnow-Fog.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - seviri_Day_Snow-Fog.algorithm
-                - seviri_Day_Snow-Fog.colormapper
+                - seviri_DaySnow-Fog.algorithm
+                - seviri_DaySnow-Fog.colormapper
                 - filename_formatter
                 - sector

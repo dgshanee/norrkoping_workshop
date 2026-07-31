@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Day-Cloud-Convection
+        product_name: DayCloudConvection
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: fci_netcdf
             arguments:
                 resampled_read: True
-        fci_Day_Cloud_Convection:
+        fci_DayCloudConvection:
             kind: product
-            name: [fci, Day-Cloud-Convection]
+            name: [fci, DayCloudConvection]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [fci_Day_Cloud_Convection.algorithm, sector, fci_Day_Cloud_Convection.coverage_checker]
+            depends_on: [fci_DayCloudConvection.algorithm, sector, fci_DayCloudConvection.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - fci_Day_Cloud_Convection.algorithm
-                - fci_Day_Cloud_Convection.colormapper
+                - fci_DayCloudConvection.algorithm
+                - fci_DayCloudConvection.colormapper
                 - filename_formatter
                 - sector

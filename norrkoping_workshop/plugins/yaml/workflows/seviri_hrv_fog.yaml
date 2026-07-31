@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: HRV-Fog
+        product_name: HRVFog
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: seviri_hrit
             arguments:
                 resampled_read: True
-        seviri_HRV_Fog:
+        seviri_HRVFog:
             kind: product
-            name: [seviri, HRV-Fog]
+            name: [seviri, HRVFog]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [seviri_HRV_Fog.algorithm, sector, seviri_HRV_Fog.coverage_checker]
+            depends_on: [seviri_HRVFog.algorithm, sector, seviri_HRVFog.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - seviri_HRV_Fog.algorithm
-                - seviri_HRV_Fog.colormapper
+                - seviri_HRVFog.algorithm
+                - seviri_HRVFog.colormapper
                 - filename_formatter
                 - sector

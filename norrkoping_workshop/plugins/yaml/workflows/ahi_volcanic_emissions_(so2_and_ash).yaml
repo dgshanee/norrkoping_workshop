@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Volcanic-Emissions-(SO2-and-Ash)
+        product_name: VolcanicEmissions(SO2andAsh)
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: ahi_hsd
             arguments:
                 resampled_read: True
-        ahi_Volcanic_Emissions_(SO2_and_Ash):
+        ahi_VolcanicEmissions(SO2andAsh):
             kind: product
-            name: [ahi, Volcanic-Emissions-(SO2-and-Ash)]
+            name: [ahi, VolcanicEmissions(SO2andAsh)]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [ahi_Volcanic_Emissions_(SO2_and_Ash).algorithm, sector, ahi_Volcanic_Emissions_(SO2_and_Ash).coverage_checker]
+            depends_on: [ahi_VolcanicEmissions(SO2andAsh).algorithm, sector, ahi_VolcanicEmissions(SO2andAsh).coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - ahi_Volcanic_Emissions_(SO2_and_Ash).algorithm
-                - ahi_Volcanic_Emissions_(SO2_and_Ash).colormapper
+                - ahi_VolcanicEmissions(SO2andAsh).algorithm
+                - ahi_VolcanicEmissions(SO2andAsh).colormapper
                 - filename_formatter
                 - sector

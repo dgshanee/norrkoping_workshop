@@ -6,7 +6,7 @@ docstring: |
     pass
 spec:
     globals:
-        product_name: Day-Cloud-Convection
+        product_name: DayCloudConvection
     steps:
         sector:
             kind: sector
@@ -16,19 +16,19 @@ spec:
             name: ahi_hsd
             arguments:
                 resampled_read: True
-        ahi_Day_Cloud_Convection:
+        ahi_DayCloudConvection:
             kind: product
-            name: [ahi, Day-Cloud-Convection]
+            name: [ahi, DayCloudConvection]
             depends_on: [sector, reader]
         filename_formatter:
             kind: filename_formatter
             name: geoips_fname
-            depends_on: [ahi_Day_Cloud_Convection.algorithm, sector, ahi_Day_Cloud_Convection.coverage_checker]
+            depends_on: [ahi_DayCloudConvection.algorithm, sector, ahi_DayCloudConvection.coverage_checker]
         output_formatter:
             kind: output_formatter
             name: imagery_annotated
             depends_on:
-                - ahi_Day_Cloud_Convection.algorithm
-                - ahi_Day_Cloud_Convection.colormapper
+                - ahi_DayCloudConvection.algorithm
+                - ahi_DayCloudConvection.colormapper
                 - filename_formatter
                 - sector
