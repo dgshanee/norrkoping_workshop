@@ -10,7 +10,7 @@ from geoips import interfaces
 
 def _walk_yaml(path):
     for child in path.iterdir():
-        if child.is_dir():
+        if child.is_dir() and child.name != "products":
             yield from _walk_yaml(child)
         elif child.name.endswith(".yaml"):
             yield child
