@@ -12,10 +12,10 @@ spec:
             pass
           spec:
             variables:
+                - B12BT
+                - B10BT
                 - B13BT
                 - B08BT
-                - B10BT
-                - B12BT
             algorithm:
                 plugin:
                     name: config_rgb
@@ -28,10 +28,10 @@ spec:
             pass
           spec:
             variables:
-                - B13BT
-                - B11BT
                 - B15BT
                 - B14BT
+                - B11BT
+                - B13BT
             algorithm:
                 plugin:
                     name: config_rgb
@@ -44,9 +44,9 @@ spec:
             pass
           spec:
             variables:
-                - B13BT
                 - B15BT
                 - B07BT
+                - B13BT
             algorithm:
                 plugin:
                     name: config_rgb
@@ -59,8 +59,8 @@ spec:
             pass
           spec:
             variables:
-                - B05Ref
                 - B02Ref
+                - B05Ref
                 - B06Ref
             algorithm:
                 plugin:
@@ -74,9 +74,9 @@ spec:
             pass
           spec:
             variables:
-                - B13BT
                 - B03Ref
                 - B07BT
+                - B13BT
             algorithm:
                 plugin:
                     name: config_rgb
@@ -89,9 +89,9 @@ spec:
             pass
           spec:
             variables:
-                - B05Ref
-                - B04Ref
                 - B02Ref
+                - B04Ref
+                - B05Ref
             algorithm:
                 plugin:
                     name: config_rgb
@@ -104,8 +104,8 @@ spec:
             pass
           spec:
             variables:
-                - B13BT
                 - B02Ref
+                - B13BT
                 - B05Ref
             algorithm:
                 plugin:
@@ -123,8 +123,8 @@ spec:
                 - B05Ref
                 - B02Ref
                 - B13BT
-                - B08BT
                 - B10BT
+                - B08BT
             algorithm:
                 plugin:
                     name: config_rgb
@@ -137,10 +137,10 @@ spec:
             pass
           spec:
             variables:
-                - B13BT
-                - B11BT
                 - B15BT
                 - B14BT
+                - B11BT
+                - B13BT
             algorithm:
                 plugin:
                     name: config_rgb
@@ -168,16 +168,16 @@ spec:
             pass
           spec:
             variables:
-                - B13BT
-                - B11BT
                 - B15BT
                 - B14BT
+                - B11BT
+                - B13BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
                         config_name: abi_24h_microphysics_ash
-        - name: VolcanicEmissions(SO2andAsh)
+        - name: VolcanicEmissionsSO2andAsh
           product_defaults: RGB-Default
           source_names: [abi]
           docstring: |
@@ -186,13 +186,13 @@ spec:
             variables:
                 - B13BT
                 - B11BT
-                - B09BT
                 - B10BT
+                - B09BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_volcanic_emissions_(so2_and_ash)
+                        config_name: abi_volcanic_emissions_so2_and_ash
         - name: FireTemperature
           product_defaults: RGB-Default
           source_names: [abi]
@@ -216,8 +216,8 @@ spec:
           spec:
             variables:
                 - B02Ref
-                - B07BT
                 - B03Ref
+                - B07BT
             algorithm:
                 plugin:
                     name: config_rgb
@@ -230,29 +230,29 @@ spec:
             pass
           spec:
             variables:
-                - B05Ref
                 - B02Ref
+                - B05Ref
                 - B03Ref
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
                         config_name: abi_day_land_cloud
-        - name: DayMicrophysics(withNIR1.6,Legacy)
+        - name: DayMicrophysicswithNIR16Legacy
           product_defaults: RGB-Default
           source_names: [abi]
           docstring: |
             pass
           spec:
             variables:
-                - B13BT
                 - B03Ref
                 - B05Ref
+                - B13BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_microphysics_(with_nir_1.6,_legacy)
+                        config_name: abi_day_microphysics_with_nir_16_legacy
         - name: DayCloudConvection
           product_defaults: RGB-Default
           source_names: [abi]
@@ -260,8 +260,8 @@ spec:
             pass
           spec:
             variables:
-                - B13BT
                 - B02Ref
+                - B13BT
             algorithm:
                 plugin:
                     name: config_rgb
@@ -280,19 +280,19 @@ spec:
                     name: config_rgb
                     arguments:
                         config_name: abi_hrv_fog
-        - name: DaySnow-Fog
+        - name: DaySnowFog
           product_defaults: RGB-Default
           source_names: [abi]
           docstring: |
             pass
           spec:
             variables:
-                - B05Ref
-                - B13BT
                 - B03Ref
                 - B07BT
+                - B05Ref
+                - B13BT
             algorithm:
                 plugin:
                     name: config_rgb
                     arguments:
-                        config_name: abi_day_snow-fog
+                        config_name: abi_day_snowfog

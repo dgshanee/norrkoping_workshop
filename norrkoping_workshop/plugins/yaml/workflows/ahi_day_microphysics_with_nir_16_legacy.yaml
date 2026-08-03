@@ -1,0 +1,34 @@
+apiVersion: geoips/v1
+interface: workflows
+family: order_based
+name: ahi_day_microphysics_with_nir_16_legacy
+docstring: |
+    pass
+spec:
+    globals:
+        product_name: DayMicrophysicswithNIR16Legacy
+    steps:
+        sector:
+            kind: sector
+            name: japan
+        reader:
+            kind: reader
+            name: ahi_hsd
+            arguments:
+                resampled_read: True
+        ahi_DayMicrophysicswithNIR16Legacy:
+            kind: product
+            name: [ahi, DayMicrophysicswithNIR16Legacy]
+            depends_on: [sector, reader]
+        filename_formatter:
+            kind: filename_formatter
+            name: geoips_fname
+            depends_on: [ahi_DayMicrophysicswithNIR16Legacy.algorithm, sector, ahi_DayMicrophysicswithNIR16Legacy.coverage_checker]
+        output_formatter:
+            kind: output_formatter
+            name: imagery_annotated
+            depends_on:
+                - ahi_DayMicrophysicswithNIR16Legacy.algorithm
+                - ahi_DayMicrophysicswithNIR16Legacy.colormapper
+                - filename_formatter
+                - sector

@@ -1,0 +1,34 @@
+apiVersion: geoips/v1
+interface: workflows
+family: order_based
+name: fci_day_microphysics_with_nir_16_legacy
+docstring: |
+    pass
+spec:
+    globals:
+        product_name: DayMicrophysicswithNIR16Legacy
+    steps:
+        sector:
+            kind: sector
+            name: africa
+        reader:
+            kind: reader
+            name: fci_netcdf
+            arguments:
+                resampled_read: True
+        fci_DayMicrophysicswithNIR16Legacy:
+            kind: product
+            name: [fci, DayMicrophysicswithNIR16Legacy]
+            depends_on: [sector, reader]
+        filename_formatter:
+            kind: filename_formatter
+            name: geoips_fname
+            depends_on: [fci_DayMicrophysicswithNIR16Legacy.algorithm, sector, fci_DayMicrophysicswithNIR16Legacy.coverage_checker]
+        output_formatter:
+            kind: output_formatter
+            name: imagery_annotated
+            depends_on:
+                - fci_DayMicrophysicswithNIR16Legacy.algorithm
+                - fci_DayMicrophysicswithNIR16Legacy.colormapper
+                - filename_formatter
+                - sector

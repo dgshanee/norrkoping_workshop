@@ -1,0 +1,37 @@
+interface: algorithm_configs
+apiVersion: geoips/v1
+name: abi_volcanic_emissions_so2_and_ash
+family: standard
+docstring:
+    Configuration plugins for generic rgb recipes.
+spec:
+    algorithm: config_rgb
+    red:
+        equation:
+                type: difference
+                variables:
+                  - B09BT
+                  - B10BT
+        data_range: [-4.0, 2.0]
+        gamma: 1.0
+        input_units: kelvin
+        output_units: kelvin
+    green:
+        equation:
+                type: difference
+                variables:
+                  - B13BT
+                  - B11BT
+        data_range: [-4.0, 5.0]
+        gamma: 1.0
+        input_units: kelvin
+        output_units: kelvin
+    blue:
+        equation:
+                type: raw
+                variables:
+                  - B13BT
+        data_range: [243.0, 303.0]
+        gamma: 1.0
+        input_units: kelvin
+        output_units: kelvin

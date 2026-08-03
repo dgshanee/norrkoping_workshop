@@ -1,0 +1,34 @@
+apiVersion: geoips/v1
+interface: workflows
+family: order_based
+name: ahi_volcanic_emissions_so2_and_ash
+docstring: |
+    pass
+spec:
+    globals:
+        product_name: VolcanicEmissionsSO2andAsh
+    steps:
+        sector:
+            kind: sector
+            name: japan
+        reader:
+            kind: reader
+            name: ahi_hsd
+            arguments:
+                resampled_read: True
+        ahi_VolcanicEmissionsSO2andAsh:
+            kind: product
+            name: [ahi, VolcanicEmissionsSO2andAsh]
+            depends_on: [sector, reader]
+        filename_formatter:
+            kind: filename_formatter
+            name: geoips_fname
+            depends_on: [ahi_VolcanicEmissionsSO2andAsh.algorithm, sector, ahi_VolcanicEmissionsSO2andAsh.coverage_checker]
+        output_formatter:
+            kind: output_formatter
+            name: imagery_annotated
+            depends_on:
+                - ahi_VolcanicEmissionsSO2andAsh.algorithm
+                - ahi_VolcanicEmissionsSO2andAsh.colormapper
+                - filename_formatter
+                - sector
